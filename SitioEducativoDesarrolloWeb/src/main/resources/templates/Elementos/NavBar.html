@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nav Bar</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" th:fragment="NavBar" style="background-color: #8B0000;">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand d-flex align-items-center" th:href="@{/}">
+            <img th:src="@{/img/logo.png}" width="40" height="40" class="me-2">
+            Inicio
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ms-auto">
+                <a class="navbar-brand" th:href="@{/Temas}">Temas</a>
+                <a class="navbar-brand" th:href="@{/Cuestionarios}">Cuestionarios</a>
+                <a class="navbar-brand" th:href="@{/Acercade}">Acerca de</a>
+            </div>
+        </div>
+
+    </div>
+</nav>
+</body>
+</html>
