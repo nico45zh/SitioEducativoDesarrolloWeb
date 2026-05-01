@@ -6,17 +6,66 @@
     <title>Pagina de Inicio</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
+
 <body class="d-flex flex-column min-vh-100">
     <!-- NavBar -->
         <div th:replace="Elementos/NavBar :: NavBar"> </div>
 
     <!-- Main -->
-    <h5> Inicio  </h5>
+    <h1 id="titulo"></h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-6"><br>
+                <div>
+                    <p class="texto-portada">
+                        Universidad Nacional de Costa Rica<br>
+                        Facultad de Ciencias Exactas y Naturales<br>
+                        Escuela de Informática<br>
+                        Carrera: Ingnieria en Sistemas de Información<br>
+                        Curso: Programación IV - EIF209<br>
+                        Docente: Steven Brenes Chavarría<br>
+                        Estudiante: Nicolas Zárate Hernández<br>
+                        Proyecto: Tarea Continua<br>
+                        Ciclo I - 2026<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-6">Contenido<br>
+
+                <div class="d-flex flex-column gap-3">
+
+                    <div>
+                        <p class="mb-1">Ingresar a los temas del curso.</p>
+                        <a class="btn btn-primary" th:href="@{/Temas}">Ver temas</a>
+                    </div>
+
+                    <div>
+                        <p class="mb-1">Ir a cuestionarios.</p>
+                        <a class="btn btn-primary" th:href="@{/Cuestionarios}">Cuestionarios</a>
+                    </div>
+
+                    <div>
+                        <p class="mb-1">Ver información de la página.</p>
+                        <a class="btn btn-primary" th:href="@{/Acercade}">Acerca de</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
     <!-- Footer -->
-        <div th:replace="Elementos/Footer:: Footer"> </div>
+    <div th:replace="Elementos/Footer:: Footer"> </div>
 
+    <script th:src="@{/js/Inicio.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

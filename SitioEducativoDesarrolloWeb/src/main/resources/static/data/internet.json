@@ -1,0 +1,243 @@
+{
+  "Qué es Internet": {
+    "titulo": "¿Qué es Internet?",
+    "introduccion": "Internet es una red global que conecta millones de dispositivos alrededor del mundo, permitiendo la comunicación e intercambio de información en tiempo real.",
+    "concepto_tecnico": "Es una infraestructura basada en el conjunto de protocolos TCP/IP que permite la interconexión de redes independientes.",
+    "funcionamiento": "La información se envía en paquetes que viajan a través de múltiples rutas hasta llegar a su destino.",
+    "componentes": [
+      "Dispositivos finales",
+      "Routers",
+      "Protocolos",
+      "Infraestructura física"
+    ],
+    "ejemplo": "Acceder a una página web desde tu navegador.",
+    "importancia": "Base de la comunicación digital moderna.",
+    "relacion_con_ingenieria": "Fundamental para desarrollo de sistemas distribuidos."
+  },
+
+  "Qué es la World Wide Web": {
+    "titulo": "¿Qué es la World Wide Web?",
+    "introduccion": "La Web es un sistema de información que permite acceder a documentos interconectados mediante Internet.",
+    "concepto_tecnico": "Funciona sobre HTTP/HTTPS utilizando HTML y URLs.",
+    "funcionamiento": "El navegador solicita recursos a servidores web.",
+    "componentes": [
+      "Navegador",
+      "Servidor",
+      "HTML",
+      "HTTP"
+    ],
+    "ejemplo": "Visitar un sitio web.",
+    "importancia": "Permite acceder a información global.",
+    "relacion_con_ingenieria": "Base del desarrollo web."
+  },
+
+  "Diferencia entre Internet y Web": {
+    "titulo": "Internet vs Web",
+    "introduccion": "Son conceptos relacionados pero diferentes.",
+    "concepto_tecnico": "Internet es la red; la Web es un servicio.",
+    "funcionamiento": "Internet transporta datos; la Web los organiza.",
+    "componentes": [
+      "Infraestructura",
+      "Protocolos",
+      "Servicios"
+    ],
+    "ejemplo": "Email vs páginas web.",
+    "importancia": "Evita confusión conceptual.",
+    "relacion_con_ingenieria": "Importante para arquitectura de sistemas."
+  },
+
+  "Modelo OSI": {
+    "titulo": "Modelo OSI",
+    "introduccion": "Modelo conceptual de redes.",
+    "concepto_tecnico": "Divide la comunicación en 7 capas.",
+    "funcionamiento": "Cada capa cumple una función específica.",
+    "componentes": [
+      "Física",
+      "Enlace",
+      "Red",
+      "Transporte",
+      "Sesión",
+      "Presentación",
+      "Aplicación"
+    ],
+    "ejemplo": "Transmisión de datos entre sistemas.",
+    "importancia": "Estandarización.",
+    "relacion_con_ingenieria": "Base en redes."
+  },
+
+  "Capas del modelo OSI": {
+    "titulo": "Capas del Modelo OSI",
+    "introduccion": "El modelo OSI está compuesto por siete capas.",
+    "concepto_tecnico": "Cada capa tiene funciones específicas.",
+    "funcionamiento": "Los datos pasan por todas las capas.",
+    "componentes": [
+      "Aplicación",
+      "Presentación",
+      "Sesión",
+      "Transporte",
+      "Red",
+      "Enlace",
+      "Física"
+    ],
+    "ejemplo": "Envío de datos en red.",
+    "importancia": "Facilita diagnóstico.",
+    "relacion_con_ingenieria": "Clave para redes."
+  },
+
+  "Dirección IP": {
+    "titulo": "Dirección IP",
+    "introduccion": "Identificador único de dispositivos.",
+    "concepto_tecnico": "IPv4 e IPv6.",
+    "funcionamiento": "Permite ubicar dispositivos.",
+    "componentes": [
+      "Red",
+      "Host"
+    ],
+    "ejemplo": "192.168.1.1",
+    "importancia": "Comunicación en red.",
+    "relacion_con_ingenieria": "Configuración de redes."
+  },
+
+  "DNS (Domain Name System)": {
+    "titulo": "DNS",
+    "introduccion": "Traduce nombres a IP.",
+    "concepto_tecnico": "Sistema distribuido.",
+    "funcionamiento": "Resuelve dominios.",
+    "componentes": [
+      "Servidor DNS",
+      "Resolver"
+    ],
+    "ejemplo": "google.com → IP",
+    "importancia": "Facilita navegación.",
+    "relacion_con_ingenieria": "Servicios web."
+  },
+
+  "Servidores y clientes": {
+    "titulo": "Cliente-Servidor",
+    "introduccion": "Modelo de comunicación.",
+    "concepto_tecnico": "Cliente solicita, servidor responde.",
+    "funcionamiento": "Interacción mediante peticiones.",
+    "componentes": [
+      "Cliente",
+      "Servidor"
+    ],
+    "ejemplo": "Navegador y servidor web.",
+    "importancia": "Base de aplicaciones web.",
+    "relacion_con_ingenieria": "Arquitectura de sistemas."
+  },
+
+  "Navegadores web": {
+    "titulo": "Navegadores Web",
+    "introduccion": "Permiten acceder a la Web.",
+    "concepto_tecnico": "Interpretan HTML, CSS y JS.",
+    "funcionamiento": "Renderizan páginas.",
+    "componentes": [
+      "Motor de renderizado",
+      "Interfaz"
+    ],
+    "ejemplo": "Chrome, Firefox.",
+    "importancia": "Acceso a contenido.",
+    "relacion_con_ingenieria": "Desarrollo frontend."
+  },
+
+  "Funcionamiento de una petición web": {
+    "titulo": "Petición Web",
+    "introduccion": "Proceso de solicitud-respuesta.",
+    "concepto_tecnico": "Basado en HTTP.",
+    "funcionamiento": "Cliente envía request, servidor responde.",
+    "componentes": [
+      "Request",
+      "Response"
+    ],
+    "ejemplo": "GET página web.",
+    "importancia": "Base del funcionamiento web.",
+    "relacion_con_ingenieria": "APIs y backend."
+  },
+
+  "Protocolo HTTP": {
+    "titulo": "HTTP",
+    "introduccion": "Protocolo de comunicación web.",
+    "concepto_tecnico": "Sin estado.",
+    "funcionamiento": "Request-response.",
+    "componentes": [
+      "Headers",
+      "Body"
+    ],
+    "ejemplo": "GET /index",
+    "importancia": "Base de la Web.",
+    "relacion_con_ingenieria": "Desarrollo web."
+  },
+
+  "Protocolo HTTPS": {
+    "titulo": "HTTPS",
+    "introduccion": "Versión segura de HTTP.",
+    "concepto_tecnico": "Usa SSL/TLS.",
+    "funcionamiento": "Encripta datos.",
+    "componentes": [
+      "Certificados",
+      "Encriptación"
+    ],
+    "ejemplo": "https://",
+    "importancia": "Seguridad.",
+    "relacion_con_ingenieria": "Ciberseguridad."
+  },
+
+  "Diferencia entre HTTP y HTTPS": {
+    "titulo": "HTTP vs HTTPS",
+    "introduccion": "HTTPS es seguro.",
+    "concepto_tecnico": "Cifrado TLS.",
+    "funcionamiento": "Protección de datos.",
+    "componentes": [
+      "HTTP",
+      "HTTPS"
+    ],
+    "ejemplo": "Login seguro.",
+    "importancia": "Protección de información.",
+    "relacion_con_ingenieria": "Seguridad web."
+  },
+
+  "SSL y TLS": {
+    "titulo": "SSL y TLS",
+    "introduccion": "Protocolos de seguridad.",
+    "concepto_tecnico": "Encriptación.",
+    "funcionamiento": "Protegen comunicación.",
+    "componentes": [
+      "Certificados",
+      "Claves"
+    ],
+    "ejemplo": "HTTPS.",
+    "importancia": "Seguridad.",
+    "relacion_con_ingenieria": "Protección de datos."
+  },
+
+  "Métodos HTTP (GET, POST, PUT, DELETE)": {
+    "titulo": "Métodos HTTP",
+    "introduccion": "Definen acciones.",
+    "concepto_tecnico": "Operaciones CRUD.",
+    "funcionamiento": "GET obtiene, POST envía, etc.",
+    "componentes": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "ejemplo": "API REST.",
+    "importancia": "Interacción web.",
+    "relacion_con_ingenieria": "Backend y APIs."
+  },
+
+  "Códigos de estado HTTP": {
+    "titulo": "Códigos HTTP",
+    "introduccion": "Indican resultado.",
+    "concepto_tecnico": "Clases 1xx–5xx.",
+    "funcionamiento": "Respuesta del servidor.",
+    "componentes": [
+      "200 OK",
+      "404 Not Found",
+      "500 Error"
+    ],
+    "ejemplo": "Error 404.",
+    "importancia": "Diagnóstico.",
+    "relacion_con_ingenieria": "Debugging web."
+  }
+}

@@ -1,0 +1,35 @@
+.btn-primary {
+    background-color: #8B0000 !important; //Sobreescribir el estilo de bootsrap
+    border-color: #8B0000 !important;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover { //Para dar efecto al pasar el mouse
+    background-color: #a30000 !important;
+    transform: scale(1.05);
+}
+
+.texto-portada{
+    font-size: 2rem;
+    font-family: "Segoe UI", sans-serif;
+    text-align: left;
+    line-height: 1.5;
+    color: black;
+
+}
+
+.card-animada {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+    min-height: 200px;
+    max-width: 500px;
+    margin: 0 auto; /* centra la card */
+
+}
+
+.card-animada.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
