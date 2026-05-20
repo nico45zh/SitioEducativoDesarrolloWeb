@@ -55,6 +55,7 @@ body{
 .opcion-card:hover{
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.52);
+    border-color: #8B1E3F;
 }
 
 /* ICONOS */
@@ -64,6 +65,9 @@ body{
 
 .opcion-card:hover i{
     transform: scale(1.15);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+
+    border-color: #8B1E3F;
 }
 
 /* TEXTO IZQUIERDA */
@@ -184,6 +188,26 @@ body{
 /* JUEGO */
 /* ========================= */
 
+.titulo-juego{
+
+    font-size: 3rem;
+
+    font-weight: bold;
+
+    color: #8B1E3F;
+
+    letter-spacing: 2px;
+
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.subtitulo-juego{
+
+    color: #666;
+
+    font-size: 1.1rem;
+}
+
 .contenedor-juego{
 
     display: flex;
@@ -212,13 +236,33 @@ body{
 .panel-puntaje,
 .panel-instrucciones{
 
+    width: 280px;
+
     background-color: white;
 
     border-radius: 15px;
 
     padding: 20px;
 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    border: 1px solid #ddd;
+
+    height: fit-content;
+}
+
+.panel-instrucciones ul{
+
+    padding-left: 20px;
+
+    margin-top: 15px;
+}
+
+.panel-instrucciones li{
+
+    margin-bottom: 12px;
+
+    color: #555;
 }
 
 .panel-controles{
