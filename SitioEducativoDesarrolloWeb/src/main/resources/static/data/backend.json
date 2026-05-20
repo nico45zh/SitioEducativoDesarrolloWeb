@@ -1,0 +1,236 @@
+{
+  "Cliente vs Servidor": {
+    "titulo": "Cliente vs Servidor",
+
+    "introduccion": "El modelo cliente-servidor es un modelo de arquitectura fundamental en el desarrollo de aplicaciones web, donde un cliente realiza solicitudes a un servidor, y este responde proporcionando recursos o servicios.",
+
+    "concepto_tecnico": "Desde una perspectiva técnica, el cliente es una entidad que consume servicios (como un navegador web), mientras que el servidor es un sistema que provee servicios o recursos (como un servidor web o de base de datos). Esta comunicación se realiza mediante protocolos como HTTP/HTTPS dentro de una arquitectura distribuida.",
+
+    "funcionamiento": "El cliente inicia la comunicación enviando una solicitud (request) al servidor. El servidor procesa esa solicitud, accede a recursos necesarios (archivos, base de datos, lógica de negocio) y devuelve una respuesta (response). Este ciclo se repite continuamente en aplicaciones web.",
+
+    "componentes": [
+      "Cliente (navegador, app móvil)",
+      "Servidor (backend, API)",
+      "Red de comunicación",
+      "Protocolo HTTP/HTTPS",
+      "Base de datos (opcional)"
+    ],
+
+    "ejemplo": "Cuando accedes a una página web, tu navegador (cliente) solicita información a un servidor, el cual responde enviando el contenido HTML.",
+
+    "importancia": "Es la base de prácticamente todas las aplicaciones web modernas, permitiendo la separación de responsabilidades y escalabilidad.",
+
+    "relacion_con_ingenieria": "Permite diseñar sistemas distribuidos, escalables y mantenibles, separando frontend y backend."
+  },
+
+  "Método GET/POST": {
+    "titulo": "Métodos GET y POST",
+
+    "introduccion": "GET y POST son los métodos HTTP más utilizados para enviar y recibir información entre el cliente y el servidor.",
+
+    "concepto_tecnico": "GET se utiliza para solicitar datos del servidor sin modificar recursos, mientras que POST se utiliza para enviar datos al servidor para crear o modificar recursos. Ambos forman parte del protocolo HTTP y tienen diferencias en seguridad, visibilidad y uso.",
+
+    "funcionamiento": "GET envía datos a través de la URL (query string), mientras que POST envía datos dentro del cuerpo de la solicitud (body). El servidor interpreta el método y procesa la solicitud de manera diferente según corresponda.",
+
+    "componentes": [
+      "Método HTTP",
+      "URL",
+      "Headers",
+      "Body (solo en POST)",
+      "Parámetros"
+    ],
+
+    "ejemplo": "GET: /usuarios?id=5 | POST: envío de un formulario con datos del usuario.",
+
+    "importancia": "Permiten la comunicación entre cliente y servidor para consultar o enviar información.",
+
+    "relacion_con_ingenieria": "Es esencial para el diseño de APIs REST y aplicaciones web dinámicas."
+  },
+
+  "HTTP request": {
+    "titulo": "HTTP Request",
+
+    "introduccion": "Una HTTP request es una solicitud que el cliente envía al servidor para obtener o enviar información.",
+
+    "concepto_tecnico": "Está compuesta por una línea de petición (método, URL, versión), encabezados (headers) y opcionalmente un cuerpo (body). Es un mensaje estructurado que sigue el protocolo HTTP.",
+
+    "funcionamiento": "El cliente envía la request al servidor, incluyendo toda la información necesaria. El servidor la procesa y genera una respuesta adecuada.",
+
+    "componentes": [
+      "Método (GET, POST, PUT, DELETE)",
+      "URL",
+      "Headers",
+      "Body",
+      "Versión HTTP"
+    ],
+
+    "ejemplo": "GET /index.html HTTP/1.1",
+
+    "importancia": "Es el mecanismo principal para la comunicación en la web.",
+
+    "relacion_con_ingenieria": "Permite construir APIs, manejar datos y controlar la interacción cliente-servidor."
+  },
+
+  "HTTP response": {
+    "titulo": "HTTP Response",
+
+    "introduccion": "Una HTTP response es la respuesta que el servidor envía al cliente después de procesar una solicitud.",
+
+    "concepto_tecnico": "Incluye una línea de estado (status code), encabezados (headers) y un cuerpo (body) con el contenido solicitado.",
+
+    "funcionamiento": "El servidor recibe la request, la procesa y devuelve una response con el resultado, que puede ser datos, errores o confirmaciones.",
+
+    "componentes": [
+      "Código de estado (200, 404, 500)",
+      "Headers",
+      "Body",
+      "Versión HTTP"
+    ],
+
+    "ejemplo": "HTTP/1.1 200 OK",
+
+    "importancia": "Permite al cliente saber si la solicitud fue exitosa o falló.",
+
+    "relacion_con_ingenieria": "Es clave para manejo de errores, APIs y experiencia del usuario."
+  },
+
+  "Spring Boot": {
+    "titulo": "Spring Boot",
+
+    "introduccion": "Spring Boot es un framework de Java que permite crear aplicaciones backend de manera rápida y simplificada.",
+
+    "concepto_tecnico": "Se basa en el framework Spring y utiliza configuración automática (auto-configuration) para reducir la necesidad de configuración manual, facilitando la creación de aplicaciones web, APIs REST y microservicios.",
+
+    "funcionamiento": "El desarrollador define clases y configuraciones, y Spring Boot se encarga de inicializar el contexto de la aplicación, gestionar dependencias y levantar un servidor embebido (como Tomcat).",
+
+    "componentes": [
+      "Spring Core",
+      "Spring MVC",
+      "Servidor embebido (Tomcat)",
+      "Dependencias Maven/Gradle",
+      "Configuración automática"
+    ],
+
+    "ejemplo": "Una API REST que devuelve datos JSON usando Spring Boot.",
+
+    "importancia": "Reduce el tiempo de desarrollo y simplifica la creación de aplicaciones robustas.",
+
+    "relacion_con_ingenieria": "Permite desarrollar backend escalables y bien estructurados."
+  },
+
+  "Inyección de dependencias (@Autowired)": {
+    "titulo": "Inyección de dependencias (@Autowired)",
+
+    "introduccion": "La inyección de dependencias es un patrón de diseño que permite gestionar las dependencias entre objetos automáticamente.",
+
+    "concepto_tecnico": "En Spring, @Autowired permite que el contenedor de Spring inyecte automáticamente instancias de clases necesarias en otras clases, reduciendo el acoplamiento.",
+
+    "funcionamiento": "Spring crea los objetos y los asigna donde se necesiten sin que el desarrollador los instancie manualmente.",
+
+    "componentes": [
+      "Contenedor Spring",
+      "Beans",
+      "Anotaciones (@Autowired)",
+      "Clases dependientes"
+    ],
+
+    "ejemplo": "@Autowired private Servicio servicio;",
+
+    "importancia": "Mejora la modularidad y facilita pruebas y mantenimiento.",
+
+    "relacion_con_ingenieria": "Es clave en arquitectura limpia y patrones de diseño modernos."
+  },
+
+  "Creación de controladores (@Controller, @RestController)": {
+    "titulo": "Creación de controladores",
+
+    "introduccion": "Los controladores gestionan las solicitudes HTTP en aplicaciones Spring.",
+
+    "concepto_tecnico": "@Controller se usa para aplicaciones con vistas (HTML), mientras que @RestController devuelve datos directamente (JSON).",
+
+    "funcionamiento": "Reciben solicitudes del cliente, procesan lógica y devuelven respuestas.",
+
+    "componentes": [
+      "Anotaciones (@Controller, @RestController)",
+      "Métodos HTTP",
+      "Rutas (@RequestMapping)",
+      "Respuestas"
+    ],
+
+    "ejemplo": "@RestController public class UsuarioController {}",
+
+    "importancia": "Permiten manejar la lógica de entrada y salida de la aplicación.",
+
+    "relacion_con_ingenieria": "Son fundamentales en el patrón MVC."
+  },
+
+  "Uso de Thymeleaf": {
+    "titulo": "Uso de Thymeleaf",
+
+    "introduccion": "Thymeleaf es un motor de plantillas para generar HTML dinámico en aplicaciones Spring.",
+
+    "concepto_tecnico": "Permite integrar datos del backend en HTML mediante atributos especiales como th:text o th:if.",
+
+    "funcionamiento": "El servidor procesa la plantilla y reemplaza los valores dinámicamente antes de enviarla al cliente.",
+
+    "componentes": [
+      "Plantillas HTML",
+      "Expresiones Thymeleaf",
+      "Integración con Spring",
+      "Datos dinámicos"
+    ],
+
+    "ejemplo": "&lt;p th:text='${usuario.nombre}'&gt;&lt;/p&gt;",
+
+    "importancia": "Permite crear interfaces dinámicas sin usar JavaScript pesado.",
+
+    "relacion_con_ingenieria": "Facilita desarrollo frontend en aplicaciones Java."
+  },
+
+  "Cookies": {
+    "titulo": "Cookies",
+
+    "introduccion": "Las cookies son pequeños archivos que el navegador almacena para guardar información del usuario.",
+
+    "concepto_tecnico": "Se envían desde el servidor al cliente y se almacenan en el navegador. Luego se envían de vuelta en cada request.",
+
+    "funcionamiento": "El servidor establece una cookie y el navegador la guarda. En futuras solicitudes, la envía automáticamente.",
+
+    "componentes": [
+      "Nombre",
+      "Valor",
+      "Expiración",
+      "Dominio",
+      "Ruta"
+    ],
+
+    "ejemplo": "Guardar sesión de usuario o preferencias.",
+
+    "importancia": "Permiten mantener estado en aplicaciones web.",
+
+    "relacion_con_ingenieria": "Son clave para autenticación y personalización."
+  },
+
+  "Sesiones": {
+    "titulo": "Sesiones",
+
+    "introduccion": "Las sesiones permiten almacenar información del usuario en el servidor.",
+
+    "concepto_tecnico": "Se identifican mediante un ID de sesión que generalmente se guarda en una cookie.",
+
+    "funcionamiento": "El servidor crea una sesión al usuario y guarda datos asociados. El cliente envía el ID en cada request.",
+
+    "componentes": [
+      "ID de sesión",
+      "Datos de usuario",
+      "Servidor",
+      "Cookie de sesión"
+    ],
+
+    "ejemplo": "Mantener usuario autenticado.",
+
+    "importancia": "Permiten manejar estado y seguridad.",
+
+    "relacion_con_ingenieria": "Fundamentales para sistemas de autenticación y control de acceso."
+  }
+}

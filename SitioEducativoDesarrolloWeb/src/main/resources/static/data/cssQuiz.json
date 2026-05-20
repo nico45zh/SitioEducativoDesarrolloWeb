@@ -1,0 +1,72 @@
+{
+  "tema": "CSS",
+
+  "preguntas": [
+
+    {
+      "pregunta": "¿Para qué sirve CSS?",
+
+      "opciones": [
+        "Dar estilos",
+        "Crear servidores",
+        "Crear bases de datos",
+        "Compilar HTML"
+      ],
+
+      "correcta": 0
+    },
+
+    {
+      "pregunta": "¿Qué selector usa una clase?",
+
+      "opciones": [
+        "#",
+        ".",
+        "*",
+        "@"
+      ],
+
+      "correcta": 1
+    },
+
+    {
+      "pregunta": "¿Qué propiedad cambia el color del texto?",
+
+      "opciones": [
+        "background",
+        "font-size",
+        "color",
+        "padding"
+      ],
+
+      "correcta": 2
+    },
+
+    {
+      "pregunta": "¿Qué modelo organiza elementos en fila o columna?",
+
+      "opciones": [
+        "Grid",
+        "Flexbox",
+        "Float",
+        "Display"
+      ],
+
+      "correcta": 1
+    },
+
+    {
+      "pregunta": "¿Qué propiedad agrega espacio interno?",
+
+      "opciones": [
+        "margin",
+        "border",
+        "padding",
+        "width"
+      ],
+
+      "correcta": 2
+    }
+
+  ]
+}

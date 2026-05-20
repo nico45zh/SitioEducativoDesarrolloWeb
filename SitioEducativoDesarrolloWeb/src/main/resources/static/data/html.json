@@ -1,0 +1,479 @@
+{
+  "Qué es HTML": {
+    "titulo": "¿Qué es HTML?",
+
+    "introduccion": "HTML (HyperText Markup Language) es el lenguaje estándar utilizado para estructurar y definir el contenido de las páginas web. No es un lenguaje de programación, sino un lenguaje de marcado que permite organizar texto, imágenes, enlaces y otros elementos para que los navegadores puedan interpretarlos y mostrarlos correctamente.",
+
+    "concepto_tecnico": "Desde un enfoque técnico, HTML es un lenguaje basado en etiquetas (tags) que define la estructura semántica de un documento web. Forma parte de la capa de presentación en la arquitectura de aplicaciones web y trabaja en conjunto con CSS y JavaScript.",
+
+    "funcionamiento": "El navegador recibe un archivo HTML, interpreta sus etiquetas y construye el DOM para renderizar el contenido visualmente.",
+
+    "componentes": [
+      "Etiquetas HTML: Elementos utilizados para estructurar y definir contenido dentro de una página web.",
+      "Atributos: Propiedades adicionales que modifican el comportamiento de las etiquetas HTML.",
+      "Contenido textual: Información escrita mostrada dentro del navegador.",
+      "Elementos multimedia: Recursos como imágenes, videos y audio integrados en la página.",
+      "Estructura DOM: Representación jerárquica del documento interpretada por el navegador."
+    ],
+
+    "ejemplo": "<p>Hola mundo</p>",
+
+    "importancia": "HTML es la base de toda página web moderna.",
+
+    "relacion_con_ingenieria": "Permite desarrollar interfaces web estructuradas y accesibles."
+  },
+
+  "Estructura básica de un documento HTML": {
+    "titulo": "Estructura básica de un documento HTML",
+
+    "introduccion": "Todo documento HTML sigue una estructura estándar.",
+
+    "concepto_tecnico": "Incluye elementos como <!DOCTYPE html>, <html>, <head> y <body>.",
+
+    "funcionamiento": "El navegador procesa la estructura jerárquica para renderizar el documento.",
+
+    "componentes": [
+      "DOCTYPE: Declaración que indica la versión de HTML utilizada.",
+      "Etiqueta html: Elemento raíz del documento.",
+      "Etiqueta head: Contiene metadatos y configuraciones.",
+      "Etiqueta body: Contiene el contenido visible."
+    ],
+
+    "ejemplo": "<!DOCTYPE html><html><head><title>Mi sitio</title></head><body><h1>Hola</h1></body></html>",
+
+    "importancia": "Garantiza compatibilidad y correcta interpretación.",
+
+    "relacion_con_ingenieria": "Permite crear aplicaciones web mantenibles."
+  },
+
+  "Etiqueta html": {
+    "titulo": "Etiqueta <html>",
+
+    "introduccion": "Es el elemento raíz de un documento HTML.",
+
+    "concepto_tecnico": "Encapsula todo el contenido HTML.",
+
+    "funcionamiento": "Contiene las secciones head y body.",
+
+    "componentes": [
+      "Atributo lang: Define el idioma del documento.",
+      "head: Sección de metadatos.",
+      "body: Sección visible del documento."
+    ],
+
+    "ejemplo": "<html lang='es'></html>",
+
+    "importancia": "Define el inicio y fin del documento HTML.",
+
+    "relacion_con_ingenieria": "Ayuda a estructurar correctamente páginas web."
+  },
+
+  "Etiqueta head": {
+    "titulo": "Etiqueta <head>",
+
+    "introduccion": "Contiene metadatos y configuraciones del documento.",
+
+    "concepto_tecnico": "Incluye title, meta, link y script.",
+
+    "funcionamiento": "Se procesa antes del contenido visible.",
+
+    "componentes": [
+      "title: Define el título del documento.",
+      "meta: Configura metadatos.",
+      "link: Vincula archivos externos.",
+      "script: Incluye código JavaScript."
+    ],
+
+    "ejemplo": "<head><meta charset='UTF-8'><title>Mi sitio</title></head>",
+
+    "importancia": "Configura el comportamiento del documento.",
+
+    "relacion_con_ingenieria": "Es fundamental para SEO y rendimiento."
+  },
+
+  "Etiqueta body": {
+    "titulo": "Etiqueta <body>",
+
+    "introduccion": "Contiene todo el contenido visible de la página.",
+
+    "concepto_tecnico": "Define los elementos renderizables.",
+
+    "funcionamiento": "El navegador renderiza visualmente su contenido.",
+
+    "componentes": [
+      "Texto: Información mostrada al usuario.",
+      "Imágenes: Recursos gráficos.",
+      "Formularios: Captura de datos.",
+      "Tablas: Organización de información.",
+      "Multimedia: Audio y video."
+    ],
+
+    "ejemplo": "<body><h1>Hola</h1></body>",
+
+    "importancia": "Define la experiencia visual del usuario.",
+
+    "relacion_con_ingenieria": "Es la base de las interfaces frontend."
+  },
+  
+  "Etiqueta title": {
+    "titulo": "Etiqueta &lt;title&gt;",
+
+    "introduccion": "Define el título que aparece en la pestaña del navegador y en los resultados de búsqueda.",
+
+    "concepto_tecnico": "Es una etiqueta ubicada dentro de la sección &lt;head&gt; del documento HTML y proporciona el título oficial de la página.",
+
+    "funcionamiento": "Cuando el navegador carga el documento HTML, interpreta el contenido de la etiqueta &lt;title&gt; y lo muestra en la pestaña activa del navegador.",
+
+    "componentes": [
+      "Título descriptivo: Nombre principal de la página web.",
+      "Palabras clave: Términos relevantes utilizados para SEO y buscadores.",
+      "Nombre del sitio: Identificación general del proyecto o aplicación web."
+    ],
+
+    "ejemplo": "&lt;title&gt;Mi página web&lt;/title&gt;",
+
+    "importancia": "Es fundamental para la identificación de páginas, la experiencia de usuario y el posicionamiento en motores de búsqueda.",
+
+    "relacion_con_ingenieria": "Permite mejorar accesibilidad, organización y optimización SEO en aplicaciones web."
+  },
+
+  "Meta etiquetas": {
+    "titulo": "Meta etiquetas",
+
+    "introduccion": "Proporcionan información adicional del documento.",
+
+    "concepto_tecnico": "Se implementan mediante la etiqueta meta.",
+
+    "funcionamiento": "El navegador interpreta configuraciones y metadatos.",
+
+    "componentes": [
+      "charset: Define codificación de caracteres.",
+      "viewport: Configuración responsive.",
+      "description: Descripción para buscadores.",
+      "robots: Control de indexación.",
+      "author: Autor del documento."
+    ],
+
+    "ejemplo": "<meta charset='UTF-8'>",
+
+    "importancia": "Mejoran compatibilidad y SEO.",
+
+    "relacion_con_ingenieria": "Impactan accesibilidad y posicionamiento."
+  },
+
+  "Encabezados (h1 - h6)": {
+    "titulo": "Encabezados (h1 - h6)",
+
+    "introduccion": "Permiten organizar jerárquicamente el contenido.",
+
+    "concepto_tecnico": "Representan niveles de importancia semántica.",
+
+    "funcionamiento": "El navegador los renderiza con diferentes tamaños.",
+
+    "componentes": [
+      "h1: Título principal.",
+      "h2: Subtítulos importantes.",
+      "h3: Subsecciones.",
+      "h4: Encabezados secundarios.",
+      "h5: Subdivisiones menores.",
+      "h6: Nivel más bajo de encabezado."
+    ],
+
+    "ejemplo": "<h1>Título principal</h1>",
+
+    "importancia": "Favorecen accesibilidad y SEO.",
+
+    "relacion_con_ingenieria": "Organizan interfaces y contenido."
+  },
+
+  "Párrafos (p)": {
+    "titulo": "Párrafos (p)",
+
+    "introduccion": "Definen bloques de texto.",
+
+    "concepto_tecnico": "Elemento semántico de bloque.",
+
+    "funcionamiento": "El navegador agrega márgenes automáticamente.",
+
+    "componentes": [
+      "Texto: Información escrita.",
+      "Separación visual: Márgenes automáticos.",
+      "Semántica: Identificación de contenido textual."
+    ],
+
+    "ejemplo": "<p>Texto de ejemplo</p>",
+
+    "importancia": "Facilitan la lectura.",
+
+    "relacion_con_ingenieria": "Ayudan a crear interfaces claras."
+  },
+
+  "Enlaces (a)": {
+    "titulo": "Enlaces (a)",
+
+    "introduccion": "Permiten navegar entre recursos web.",
+
+    "concepto_tecnico": "Utilizan el atributo href.",
+
+    "funcionamiento": "El navegador redirige al recurso indicado.",
+
+    "componentes": [
+      "href: Dirección del recurso.",
+      "target: Lugar donde se abrirá el enlace.",
+      "Texto del enlace: Contenido clickeable.",
+      "Anclas internas: Navegación interna."
+    ],
+
+    "ejemplo": "<a href='https://google.com'>Google</a>",
+
+    "importancia": "Son la base de la navegación web.",
+
+    "relacion_con_ingenieria": "Permiten conectar módulos y recursos."
+  },
+
+  "Imágenes (img)": {
+    "titulo": "Imágenes (img)",
+
+    "introduccion": "Permiten insertar imágenes en páginas web.",
+
+    "concepto_tecnico": "Etiqueta vacía que utiliza src y alt.",
+
+    "funcionamiento": "El navegador carga y renderiza el recurso gráfico.",
+
+    "componentes": [
+      "src: Ruta de la imagen.",
+      "alt: Texto alternativo.",
+      "width: Ancho de la imagen.",
+      "height: Altura de la imagen."
+    ],
+
+    "ejemplo": "<img src='foto.jpg' alt='Imagen'>",
+
+    "importancia": "Mejoran la experiencia visual.",
+
+    "relacion_con_ingenieria": "Se optimizan para mejorar rendimiento."
+  },
+
+  "Listas ordenadas": {
+    "titulo": "Listas ordenadas (ol)",
+
+    "introduccion": "Representan elementos secuenciales.",
+
+    "concepto_tecnico": "Utilizan las etiquetas ol y li.",
+
+    "funcionamiento": "El navegador enumera automáticamente los elementos.",
+
+    "componentes": [
+      "ol: Contenedor de lista ordenada.",
+      "li: Elementos de la lista.",
+      "type: Tipo de numeración.",
+      "start: Valor inicial."
+    ],
+
+    "ejemplo": "<ol><li>Paso 1</li></ol>",
+
+    "importancia": "Útiles para procesos y pasos.",
+
+    "relacion_con_ingenieria": "Muy usadas en documentación técnica."
+  },
+
+  "Listas no ordenadas": {
+    "titulo": "Listas no ordenadas (ul)",
+
+    "introduccion": "Representan elementos sin orden específico.",
+
+    "concepto_tecnico": "Utilizan las etiquetas ul y li.",
+
+    "funcionamiento": "El navegador agrega viñetas automáticamente.",
+
+    "componentes": [
+      "ul: Contenedor de lista.",
+      "li: Elementos de la lista.",
+      "Bullets: Viñetas visuales."
+    ],
+
+    "ejemplo": "<ul><li>HTML</li></ul>",
+
+    "importancia": "Organizan información visualmente.",
+
+    "relacion_con_ingenieria": "Utilizadas en menús y navegación."
+  },
+
+  "Tablas": {
+    "titulo": "Tablas HTML",
+
+    "introduccion": "Permiten organizar datos en filas y columnas.",
+
+    "concepto_tecnico": "Utilizan table, tr, td y th.",
+
+    "funcionamiento": "El navegador renderiza estructuras tabulares.",
+
+    "componentes": [
+      "table: Tabla principal.",
+      "tr: Filas.",
+      "td: Celdas de datos.",
+      "th: Encabezados."
+    ],
+
+    "ejemplo": "<table><tr><td>Dato</td></tr></table>",
+
+    "importancia": "Facilitan visualizar datos estructurados.",
+
+    "relacion_con_ingenieria": "Usadas en sistemas administrativos y reportes."
+  },
+
+  "Formularios": {
+    "titulo": "Formularios (form)",
+
+    "introduccion": "Permiten recopilar información del usuario.",
+
+    "concepto_tecnico": "Agrupan controles interactivos.",
+
+    "funcionamiento": "Envían datos al servidor mediante HTTP.",
+
+    "componentes": [
+      "action: Ruta de envío.",
+      "method: Método HTTP.",
+      "inputs: Campos interactivos.",
+      "submit: Botón de envío."
+    ],
+
+    "ejemplo": "<form method='POST'></form>",
+
+    "importancia": "Permiten interacción usuario-sistema.",
+
+    "relacion_con_ingenieria": "Base de autenticación y captura de datos."
+  },
+
+  "Inputs y tipos de input": {
+    "titulo": "Inputs y tipos de input",
+
+    "introduccion": "Permiten ingresar diferentes tipos de datos.",
+
+    "concepto_tecnico": "La etiqueta input soporta múltiples tipos.",
+
+    "funcionamiento": "Cada tipo adapta validaciones y visualización.",
+
+    "componentes": [
+      "text: Texto simple.",
+      "password: Contraseñas.",
+      "email: Correos electrónicos.",
+      "number: Valores numéricos.",
+      "date: Fechas."
+    ],
+
+    "ejemplo": "<input type='email'>",
+
+    "importancia": "Facilitan validación y captura de información.",
+
+    "relacion_con_ingenieria": "Esenciales en formularios dinámicos."
+  },
+
+  "Etiqueta header": {
+    "titulo": "Etiqueta <header>",
+
+    "introduccion": "Representa la cabecera de una página.",
+
+    "concepto_tecnico": "Elemento semántico introductorio.",
+
+    "funcionamiento": "Agrupa logotipos y navegación.",
+
+    "componentes": [
+      "Logotipo: Identidad visual.",
+      "Título: Encabezado principal.",
+      "Menú: Navegación principal."
+    ],
+
+    "ejemplo": "<header><h1>Mi sitio</h1></header>",
+
+    "importancia": "Mejora organización y accesibilidad.",
+
+    "relacion_con_ingenieria": "Estructura interfaces modernas."
+  },
+
+  "Etiqueta nav": {
+    "titulo": "Etiqueta <nav>",
+
+    "introduccion": "Define una sección de navegación.",
+
+    "concepto_tecnico": "Agrupa enlaces de navegación.",
+
+    "funcionamiento": "Facilita identificar menús.",
+
+    "componentes": [
+      "Enlaces: Navegación entre páginas.",
+      "Menús: Organización de opciones."
+    ],
+
+    "ejemplo": "<nav><a href='/'>Inicio</a></nav>",
+
+    "importancia": "Mejora experiencia de usuario.",
+
+    "relacion_con_ingenieria": "Fundamental en aplicaciones web."
+  },
+
+  "Etiqueta section": {
+    "titulo": "Etiqueta <section>",
+
+    "introduccion": "Agrupa contenido relacionado.",
+
+    "concepto_tecnico": "Divide el contenido en secciones lógicas.",
+
+    "funcionamiento": "Cada sección agrupa información temática.",
+
+    "componentes": [
+      "Encabezado: Título de sección.",
+      "Contenido: Información agrupada."
+    ],
+
+    "ejemplo": "<section><h2>Noticias</h2></section>",
+
+    "importancia": "Mejora organización del documento.",
+
+    "relacion_con_ingenieria": "Facilita mantenimiento y semántica."
+  },
+
+  "Etiqueta article": {
+    "titulo": "Etiqueta <article>",
+
+    "introduccion": "Representa contenido independiente.",
+
+    "concepto_tecnico": "Elemento reutilizable y autónomo.",
+
+    "funcionamiento": "Puede distribuirse independientemente.",
+
+    "componentes": [
+      "Título: Encabezado del artículo.",
+      "Contenido: Información principal.",
+      "Autor: Responsable del contenido."
+    ],
+
+    "ejemplo": "<article><h2>Artículo</h2></article>",
+
+    "importancia": "Favorece reutilización y SEO.",
+
+    "relacion_con_ingenieria": "Usado en blogs y CMS."
+  },
+
+  "Etiqueta footer": {
+    "titulo": "Etiqueta <footer>",
+
+    "introduccion": "Define el pie de página.",
+
+    "concepto_tecnico": "Elemento semántico complementario.",
+
+    "funcionamiento": "Incluye información adicional.",
+
+    "componentes": [
+      "Copyright: Derechos reservados.",
+      "Enlaces secundarios: Navegación adicional.",
+      "Contacto: Información de soporte."
+    ],
+
+    "ejemplo": "<footer>&copy; 2026 Mi Sitio</footer>",
+
+    "importancia": "Completa la estructura semántica.",
+
+    "relacion_con_ingenieria": "Mejora organización y accesibilidad."
+  }
+}

@@ -26,4 +26,9 @@ public class ControllerPage {
         return "Acercade";
     }
 
+    @GetMapping("/Juego")
+    public String Juego() {
+        return "Juego";
+    }
+
 }

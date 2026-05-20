@@ -1,0 +1,61 @@
+{
+  "tema": "Fundamentos Web",
+  "preguntas": [
+
+    {
+      "pregunta": "¿Qué significa WWW?",
+      "opciones": [
+        "World Wide Web",
+        "Web World Width",
+        "Wide Web World",
+        "World Web Window"
+      ],
+      "correcta": 0
+    },
+
+    {
+      "pregunta": "¿Cuál es la función principal de un navegador web?",
+      "opciones": [
+        "Crear bases de datos",
+        "Interpretar y mostrar páginas web",
+        "Programar aplicaciones móviles",
+        "Administrar servidores"
+      ],
+      "correcta": 1
+    },
+
+    {
+      "pregunta": "¿Qué protocolo se utiliza principalmente para acceder a sitios web?",
+      "opciones": [
+        "FTP",
+        "SMTP",
+        "HTTP",
+        "SSH"
+      ],
+      "correcta": 2
+    },
+
+    {
+      "pregunta": "¿Qué significa URL?",
+      "opciones": [
+        "Universal Resource Locator",
+        "Uniform Resource Locator",
+        "Uniform Reference Link",
+        "Universal Reference Link"
+      ],
+      "correcta": 1
+    },
+
+    {
+      "pregunta": "¿Cuál de los siguientes es un motor de búsqueda?",
+      "opciones": [
+        "Google",
+        "Chrome",
+        "HTML",
+        "Bootstrap"
+      ],
+      "correcta": 0
+    }
+
+  ]
+}

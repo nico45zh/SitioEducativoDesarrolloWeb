@@ -1,0 +1,72 @@
+{
+  "tema": "HTML",
+
+  "preguntas": [
+
+    {
+      "pregunta": "¿Qué significa HTML?",
+
+      "opciones": [
+        "HyperText Markup Language",
+        "HighText Machine Language",
+        "Hyper Transfer Markup Language",
+        "Home Tool Markup Language"
+      ],
+
+      "correcta": 0
+    },
+
+    {
+      "pregunta": "¿Qué etiqueta se utiliza para párrafos?",
+
+      "opciones": [
+        "&lt;h1&gt;",
+        "&lt;div&gt;",
+        "&lt;p&gt;",
+        "&lt;span&gt;"
+      ],
+
+      "correcta": 2
+    },
+
+    {
+      "pregunta": "¿Cuál etiqueta contiene el contenido visible?",
+
+      "opciones": [
+        "&lt;head&gt;",
+        "&lt;meta&gt;",
+        "&lt;title&gt;",
+        "&lt;body&gt;"
+      ],
+
+      "correcta": 3
+    },
+
+    {
+      "pregunta": "¿Qué etiqueta se usa para enlaces?",
+
+      "opciones": [
+        "&lt;img&gt;",
+        "&lt;a&gt;",
+        "&lt;link&gt;",
+        "&lt;nav&gt;"
+      ],
+
+      "correcta": 1
+    },
+
+    {
+      "pregunta": "¿Qué etiqueta crea listas no ordenadas?",
+
+      "opciones": [
+        "&lt;ol&gt;",
+        "&lt;table&gt;",
+        "&lt;ul&gt;",
+        "&lt;li&gt;"
+      ],
+
+      "correcta": 2
+    }
+
+  ]
+}

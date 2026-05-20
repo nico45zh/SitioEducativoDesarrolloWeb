@@ -1,35 +1,277 @@
 .btn-primary {
-    background-color: #8B0000 !important; //Sobreescribir el estilo de bootsrap
+    background-color: #8B0000 !important; /* Sobreescribir Bootstrap */
     border-color: #8B0000 !important;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
 
-.btn-primary:hover { //Para dar efecto al pasar el mouse
+.btn-primary:hover {
+    /* Efecto al pasar el mouse */
     background-color: #a30000 !important;
     transform: scale(1.05);
 }
 
-.texto-portada{
-    font-size: 2rem;
-    font-family: "Segoe UI", sans-serif;
-    text-align: left;
-    line-height: 1.5;
-    color: black;
-
+:root{
+    --color-principal: #8B1E3F;
 }
 
-.card-animada {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease;
-    min-height: 200px;
-    max-width: 500px;
-    margin: 0 auto; /* centra la card */
+/* FONDO GENERAL */
+body{
+    background-color: #f8f9fa;
+}
 
+/* HERO PRINCIPAL */
+.hero{
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 25px;
+}
+
+/* BOTÓN PERSONALIZADO */
+.btn-cereza{
+    background-color: var(--color-principal);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-cereza:hover{
+    background-color: #701732;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* TARJETAS */
+.card{
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.opcion-card{
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.opcion-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.52);
+}
+
+/* ICONOS */
+.card-body i{
+    transition: transform 0.3s ease;
+}
+
+.opcion-card:hover i{
+    transform: scale(1.15);
+}
+
+/* TEXTO IZQUIERDA */
+.texto-portada{
+    font-size: 1.1rem;
+    font-family: "Segoe UI", sans-serif;
+    text-align: left;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* ANIMACIONES */
+.card-animada {
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition: all 0.7s ease;
+
+    min-height: 600px;
+
+    max-width: 600px;
+
+    border: 1px solid rgba(0,0,0,0.08);
+
+    margin: 0 auto;
 }
 
 .card-animada.visible {
+
     opacity: 1;
+
     transform: translateY(0);
+}
+
+.card-animada:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+
+    border-color: #8B1E3F;
+}
+
+.card-body i{
+
+    transition: transform 0.3s ease;
+}
+
+.card-animada:hover i{
+
+    transform: scale(1.15);
+}
+
+
+/* CONTENIDO INICIAL */
+.inicio-contenido{
+
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+
+/* ========================= */
+/* PREGUNTADERO */
+/* ========================= */
+
+.quiz-card{
+
+    transition: all 0.3s ease;
+
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.quiz-card:hover{
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+
+    border-color: #8B1E3F;
+}
+
+.opcion{
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.opcion:hover{
+
+    background-color: #f8f9fa;
+}
+
+.correcta{
+
+    background-color: #d1e7dd !important;
+}
+
+.incorrecta{
+
+    background-color: #f8d7da !important;
+}
+
+
+
+/* ========================= */
+/* JUEGO */
+/* ========================= */
+
+.contenedor-juego{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 40px;
+
+    padding: 30px;
+}
+
+.panel-lateral{
+
+    width: 280px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.panel-controles,
+.panel-puntaje,
+.panel-instrucciones{
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.panel-controles{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.panel-controles input{
+
+    padding: 8px;
+
+    border-radius: 5px;
+
+    border: 1px solid #ccc;
+}
+
+.zona-tablero{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+#tablero{
+
+    border-collapse: collapse;
+}
+
+#tablero td{
+
+    width: 50px;
+
+    height: 50px;
+
+    border: 1px solid black;
+
+    text-align: center;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    background-color: white;
+
+    transition: background-color 0.2s ease;
+}
+
+#tablero td:hover{
+    background-color: #f0f0f0;
 }

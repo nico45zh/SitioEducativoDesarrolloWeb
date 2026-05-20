@@ -1,0 +1,487 @@
+{
+  "click": {
+    "titulo": "Evento click",
+
+    "introduccion": "El evento click se dispara cuando el usuario presiona y suelta el botón principal del ratón (o realiza un toque equivalente en pantallas táctiles) sobre un elemento interactivo.",
+
+    "concepto_tecnico": "Es un evento de alto nivel que agrupa las fases mousedown + mouseup dentro del mismo objetivo. En el DOM, puede escucharse con addEventListener('click', handler) y participa en la fase de bubbling por defecto.",
+
+    "funcionamiento": "Al hacer click, el navegador genera eventos: mousedown, focus (si aplica), mouseup y click. El manejador recibe un objeto Event con propiedades como target, currentTarget y métodos preventDefault/stopPropagation.",
+
+    "componentes": [
+      "target: elemento que recibió el click",
+      "event.button: botón del ratón (0 izquierdo, 1 medio, 2 derecho)",
+      "event.clientX/Y: coordenadas del puntero",
+      "preventDefault(), stopPropagation()"
+    ],
+
+    "ejemplo": "button.addEventListener('click', () => { console.log('Botón pulsado'); });",
+
+    "importancia": "Fundamental para la interacción: disparadores de acciones, navegación, envío de formularios y accesibilidad cuando se combina con teclas.",
+
+    "relacion_con_ingenieria": "Implementar manejo de clicks accesible (soporte teclado, roles ARIA), evitar handlers pesados en elementos masivos y delegar eventos para escalabilidad."
+  },
+
+  "dblclick": {
+    "titulo": "Evento dblclick",
+
+    "introduccion": "Se dispara cuando el usuario realiza dos clicks rápidos consecutivos sobre un elemento.",
+
+    "concepto_tecnico": "Depende del tiempo entre clicks y del target; es independiente de mousedown/mouseup pero suele generarse después del segundo click. No todos los elementos o plataformas lo interpretan igual (móviles lo suelen ignorar).",
+
+    "funcionamiento": "El navegador contabiliza clicks y si coinciden en un intervalo temporal definido, emite dblclick. Puede interferir con handlers individuales de click si no se gestiona correctamente.",
+
+    "componentes": [
+      "Detección de doble click",
+      "Compatibilidad en dispositivos táctiles",
+      "event.detail: número de clicks"
+    ],
+
+    "ejemplo": "elem.addEventListener('dblclick', (e) => { e.target.classList.toggle('edit'); });",
+
+    "importancia": "Útil para acciones avanzadas (editar in-place) pero con baja prioridad en interfaces modernas por problemas de accesibilidad y usabilidad en móviles.",
+
+    "relacion_con_ingenieria": "Evitar depender exclusivamente de dblclick; ofrecer alternativas accesibles y considerar throttling o debounce cuando se requieren acciones rápidas."
+  },
+
+  "mousedown": {
+    "titulo": "Evento mousedown",
+
+    "introduccion": "Se dispara cuando el usuario presiona un botón del ratón sobre un elemento (sin soltarlo).",
+
+    "concepto_tecnico": "Evento de bajo nivel que precede a mouseup y click; puede cancelarse para evitar focus o selección predeterminada.",
+
+    "funcionamiento": "Capturable en fase de captura o bubbling; útil para iniciar acciones basadas en presión, como drag-and-drop o para medir duración de pulsación.",
+
+    "componentes": [
+      "event.button",
+      "event.buttons",
+      "event.clientX/Y",
+      "Fase de captura/bubbling"
+    ],
+
+    "ejemplo": "elem.addEventListener('mousedown', () => { console.log('inicio pulsación'); });",
+
+    "importancia": "Permite controlar interacciones precisas y personalizadas antes del click final.",
+
+    "relacion_con_ingenieria": "Usar para implementar drag, selección o interacciones que requieran diferencia entre press y release; garantizar accesibilidad alternativa mediante teclado."
+  },
+
+  "mouseup": {
+    "titulo": "Evento mouseup",
+
+    "introduccion": "Se dispara cuando el usuario suelta un botón del ratón sobre un elemento.",
+
+    "concepto_tecnico": "Completa la interacción iniciada por mousedown; la combinación puede producir un click si ambos ocurren sobre el mismo objetivo.",
+
+    "funcionamiento": "Útil para finalizar acciones (drop en drag-and-drop), medir duración de pulsaciones o ejecutar código que debe ocurrir solo al soltar.",
+
+    "componentes": [
+      "event.button",
+      "event.clientX/Y",
+      "Coexistencia con mouseout/blur"
+    ],
+
+    "ejemplo": "document.addEventListener('mouseup', () => { dragging = false; });",
+
+    "importancia": "Clave para workflows de interacción que requieren confirmación al soltar o para cancelar operaciones si se suelta fuera del objetivo.",
+
+    "relacion_con_ingenieria": "Combinar con listeners en document/window para manejar soltar fuera del elemento; prevenir memory leaks quitando listeners cuando no sean necesarios."
+  },
+
+  "mousemove": {
+    "titulo": "Evento mousemove",
+
+    "introduccion": "Se dispara continuamente mientras el puntero del ratón se mueve sobre un elemento o la ventana.",
+
+    "concepto_tecnico": "Alta frecuencia de eventos que puede provocar muchos repaints/reflows si los handlers realizan cálculos costosos; se recomienda throttling o requestAnimationFrame.",
+
+    "funcionamiento": "Proporciona coordenadas del puntero y puede usarse para interfaces ricas como drag, drawing o tooltips dinámicos.",
+
+    "componentes": [
+      "event.clientX/Y, pageX/Y, screenX/Y",
+      "event.movementX/Y",
+      "Frecuencia alta: usar debounce/throttle"
+    ],
+
+    "ejemplo": "window.addEventListener('mousemove', (e) => { /* usar requestAnimationFrame para actualizar posición */ });",
+
+    "importancia": "Permite interacciones fluidas pero mal gestionado degrada rendimiento.",
+
+    "relacion_con_ingenieria": "Optimizar handlers, evitar layout thrashing y usar técnicas de batching para actualizaciones visuales."
+  },
+
+  "mouseenter": {
+    "titulo": "Evento mouseenter",
+
+    "introduccion": "Se dispara cuando el puntero entra en el área de un elemento; no burbujea.",
+
+    "concepto_tecnico": "A diferencia de mouseover, mouseenter no se dispara por entrada en elementos hijos; ideal para detectar cuando el puntero entra en un contenedor.",
+
+    "funcionamiento": "Se usa para mostrar menús o efectos al entrar; como no burbujea, evita disparos múltiples al moverse entre hijos.",
+
+    "componentes": [
+      "No burbujea",
+      "Complementa mouseleave",
+      "Útil para contenedores con muchos hijos"
+    ],
+
+    "ejemplo": "menu.addEventListener('mouseenter', () => { menu.classList.add('open'); });",
+
+    "importancia": "Mejora control fino de interacciones hover evitando triggers redundantes.",
+
+    "relacion_con_ingenieria": "Preferir mouseenter/mouseleave para contenedores; considerar comportamiento en pantallas táctiles."
+  },
+
+  "mouseleave": {
+    "titulo": "Evento mouseleave",
+
+    "introduccion": "Se dispara cuando el puntero abandona el área de un elemento; no burbujea.",
+
+    "concepto_tecnico": "Complementario a mouseenter; no se activa cuando el puntero pasa a un hijo interno.",
+
+    "funcionamiento": "Usado para ocultar overlays o menús cuando el puntero sale del contenedor.",
+
+    "componentes": [
+      "No burbujea",
+      "Relacionado con mouseenter",
+      "Útil para limpiar estados" 
+    ],
+
+    "ejemplo": "menu.addEventListener('mouseleave', () => { menu.classList.remove('open'); });",
+
+    "importancia": "Permite controlar el ciclo de vida de elementos interactivos dependientes del puntero.",
+
+    "relacion_con_ingenieria": "Manejar con debounce para evitar flicker y considerar accesibilidad (focus) como alternativa en teclado."
+  },
+
+  "mouseover": {
+    "titulo": "Evento mouseover",
+
+    "introduccion": "Se dispara cuando el puntero entra en un elemento o en sus descendientes; burbujea.",
+
+    "concepto_tecnico": "A diferencia de mouseenter, mouseover se activa al entrar en hijos, por lo que puede producir múltiples eventos al moverse por la jerarquía.",
+
+    "funcionamiento": "Útil cuando se requiere detectar entrada en elementos hijos; también se puede filtrar mediante event.target vs currentTarget.",
+
+    "componentes": [
+      "Bubbling",
+      "Distinción entre target y currentTarget",
+      "Frecuencia según estructura DOM"
+    ],
+
+    "ejemplo": "parent.addEventListener('mouseover', (e) => { if (e.target.matches('.item')) highlight(e.target); });",
+
+    "importancia": "Versátil para delegación de eventos en listas o grids.",
+
+    "relacion_con_ingenieria": "Usar delegación y checks de target para evitar sobrecarga y comportamientos inesperados."
+  },
+
+  "mouseout": {
+    "titulo": "Evento mouseout",
+
+    "introduccion": "Se dispara cuando el puntero sale de un elemento o de sus descendientes; burbujea.",
+
+    "concepto_tecnico": "Puede ocurrir al moverse hacia un hijo o fuera del elemento; requires comprobar relatedTarget para entender hacia dónde fue el puntero.",
+
+    "funcionamiento": "Usado para ocultar tooltips u otros elementos cuando el puntero abandona el objetivo, con cuidado por triggers provenientes de hijos.",
+
+    "componentes": [
+      "event.relatedTarget para saber el nuevo elemento",
+      "Bubbling",
+      "Interacción con children"
+    ],
+
+    "ejemplo": "elem.addEventListener('mouseout', (e) => { if (!e.relatedTarget || !elem.contains(e.relatedTarget)) hideTooltip(); });",
+
+    "importancia": "Necesario para UX de hover complejas; mal usado genera flicker.",
+
+    "relacion_con_ingenieria": "Comprobar relatedTarget y usar thresholds o delays para evitar comportamiento molesto."
+  },
+
+  "contextmenu": {
+    "titulo": "Evento contextmenu",
+
+    "introduccion": "Se dispara cuando el usuario solicita el menú contextual (normalmente click derecho) sobre un elemento.",
+
+    "concepto_tecnico": "Permite interceptar la acción por defecto y presentar menús personalizados; usar preventDefault para suprimir el menú nativo.",
+
+    "funcionamiento": "El manejador recibe el evento y puede mostrar una UI propia en las coordenadas del puntero.",
+
+    "componentes": [
+      "PreventDefault para bloquear menú nativo",
+      "Uso de coordenadas clientX/clientY",
+      "Compatibilidad con accesibilidad"
+    ],
+
+    "ejemplo": "elem.addEventListener('contextmenu', (e) => { e.preventDefault(); showMenu(e.clientX, e.clientY); });",
+
+    "importancia": "Útil para introducir menús contextuales ricos, pero debe mantenerse la accesibilidad y opciones nativas cuando corresponda.",
+
+    "relacion_con_ingenieria": "Proveer alternativas por teclado y considerar implications de seguridad y usabilidad en mobile."
+  },
+
+  "keydown": {
+    "titulo": "Evento keydown",
+
+    "introduccion": "Se dispara cuando se presiona una tecla; ocurre antes de que se genere el carácter asociado.",
+
+    "concepto_tecnico": "Proporciona event.key, event.code y propiedades como repeat. A diferencia de keypress, keydown cubre todas las teclas, incluidas modificadoras.",
+
+    "funcionamiento": "Ideal para detectar atajos, navegación por teclado y prevenir acciones predeterminadas (e.g., evitar scroll en flechas).",
+
+    "componentes": [
+      "event.key, event.code",
+      "event.altKey/ctrlKey/shiftKey/metaKey",
+      "event.repeat"
+    ],
+
+    "ejemplo": "window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });",
+
+    "importancia": "Crítico para accesibilidad y experiencias eficientes vía teclado.",
+
+    "relacion_con_ingenieria": "Implementar atajos con scope delimitado, evitar interferir con comportamiento nativo global y documentar combinaciones."
+  },
+
+  "keyup": {
+    "titulo": "Evento keyup",
+
+    "introduccion": "Se dispara cuando se suelta una tecla después de haber sido presionada.",
+
+    "concepto_tecnico": "Útil para acciones que requieren la confirmación de la tecla; puede complementarse con keydown para distinguir repeats.",
+
+    "funcionamiento": "Se utiliza en validaciones en vivo, conteo de teclas y para terminar interacciones iniciadas en keydown.",
+
+    "componentes": [
+      "event.key",
+      "Sin repeat en la misma forma que keydown",
+      "Útil para input handling"
+    ],
+
+    "ejemplo": "input.addEventListener('keyup', (e) => { validate(e.target.value); });",
+
+    "importancia": "Complementa keydown para gestionar entrada de usuario y accesibilidad.",
+
+    "relacion_con_ingenieria": "Evitar costosas operaciones en cada keyup; usar debounce y validar en servidores cuando sea necesario."
+  },
+
+  "blur": {
+    "titulo": "Evento blur",
+
+    "introduccion": "Se dispara cuando un elemento pierde foco (focus) — no burbujea.",
+
+    "concepto_tecnico": "Complementario a focus; para manejarlo en bubbling hay focusout. Util para validaciones al salir de un campo.",
+
+    "funcionamiento": "Se ejecuta cuando otro elemento recibe foco o la ventana pierde foco; ideal para validar o limpiar estados.",
+
+    "componentes": [
+      "No burbujea",
+      "Uso común en formularios",
+      "Alternativa bubbling: focusout"
+    ],
+
+    "ejemplo": "input.addEventListener('blur', () => { checkEmail(input.value); });",
+
+    "importancia": "Esencial para validaciones y control de UX en formularios.",
+
+    "relacion_con_ingenieria": "Preferir focusout si se necesita bubbling; considerar timing y evitar validaciones intrusivas que frenen la entrada del usuario."
+  },
+
+  "focus": {
+    "titulo": "Evento focus",
+
+    "introduccion": "Se dispara cuando un elemento recibe foco (tab, click); no burbujea.",
+
+    "concepto_tecnico": "Para bubbling usar focusin; focus es útil para mostrar ayudas contextuales, estilos y preparar el estado de edición.",
+
+    "funcionamiento": "Puede cambiar estilos (focus-visible) y activar elementos auxiliares (placeholders, instrucciones).",
+
+    "componentes": [
+      "No burbujea",
+      "Alternativa bubbling: focusin",
+      "Interacción con tabindex y accesibilidad"
+    ],
+
+    "ejemplo": "input.addEventListener('focus', () => { input.classList.add('focused'); });",
+
+    "importancia": "Clave para accesibilidad y flujo de formularios.",
+
+    "relacion_con_ingenieria": "Diseñar estados visuales claros y proporcionar atajos de teclado, evitando enfoques que oculten foco (outline:none sin alternativa)."
+  },
+
+  "change": {
+    "titulo": "Evento change",
+
+    "introduccion": "Se dispara cuando el valor de un elemento de formulario cambia y pierde el foco (o inmediatamente para algunos elementos como select).",
+
+    "concepto_tecnico": "Difiere entre input (input event) y change: input ocurre en cada modificación, change se dispara al finalizar la edición.",
+
+    "funcionamiento": "Útil para acciones que deben ocurrir tras confirmar un nuevo valor (envío parcial, validación al final).",
+
+    "componentes": [
+      "Elementos: input, select, textarea",
+      "Diferencia con input event",
+      "Momentos de disparo (on blur o selección)"
+    ],
+
+    "ejemplo": "select.addEventListener('change', (e) => { loadOptions(e.target.value); });",
+
+    "importancia": "Previene llamadas excesivas al servidor y coordina cambios finales en formularios.",
+
+    "relacion_con_ingenieria": "Elegir entre input y change según necesidad; validar y sanitizar datos antes de procesar."
+  },
+
+  "select": {
+    "titulo": "Evento select",
+
+    "introduccion": "Se dispara cuando el usuario selecciona texto dentro de un elemento input o textarea.",
+
+    "concepto_tecnico": "Permite detectar rangos de selección y actuar (mostrar acciones contextuales, botones copiar).",
+
+    "funcionamiento": "Proporciona accesos a selectionStart/End y se usa en editores o herramientas de anotación.",
+
+    "componentes": [
+      "selectionStart, selectionEnd",
+      "window.getSelection() para contenido no input",
+      "Interacción con clipboard"
+    ],
+
+    "ejemplo": "textarea.addEventListener('select', () => { showSelectionToolbar(); });",
+
+    "importancia": "Útil en UX avanzadas como editores, resaltado y herramientas de anotación.",
+
+    "relacion_con_ingenieria": "Gestionar performance en textos largos y compatibilidad entre navegadores; ofrecer alternativas accesibles."
+  },
+
+  "load": {
+    "titulo": "Evento load",
+
+    "introduccion": "Se dispara cuando un recurso (imagen, script, window) ha terminado de cargarse completamente.",
+
+    "concepto_tecnico": "Para window, load ocurre después de que todos los recursos dependientes se hayan cargado (incluye imágenes); para elementos individuales ocurre al completar su carga.",
+
+    "funcionamiento": "Útil para mediciones de rendimiento y para ejecutar código que depende de recursos externos.",
+
+    "componentes": [
+      "window.onload vs DOMContentLoaded",
+      "Elementos: img.onload",
+      "Usos para lazy loading y métricas"
+    ],
+
+    "ejemplo": "window.addEventListener('load', () => { initAnalytics(); });",
+
+    "importancia": "Clave para tareas que requieren todos los activos; no confundir con DOMContentLoaded que ocurre antes.",
+
+    "relacion_con_ingenieria": "Preferir DOMContentLoaded para inicializaciones UI y usar load para operaciones que requieren imágenes u otros recursos completados."
+  },
+
+  "DOMContentLoaded": {
+    "titulo": "Evento DOMContentLoaded",
+
+    "introduccion": "Se dispara cuando el HTML ha sido completamente cargado y parseado, sin esperar por hojas de estilo, imágenes u otros subrecursos.",
+
+    "concepto_tecnico": "Indica que el DOM está listo para ser manipulado por scripts sin bloquear por recursos externos; ideal para inicializar comportamientos.",
+
+    "funcionamiento": "Permite ejecutar scripts que manipulan nodos del DOM inmediatamente después de su parseo, mejorando tiempo hasta interactividad.",
+
+    "componentes": [
+      "Diferencia con load",
+      "Tiempo de inicialización óptimo",
+      "Uso en módulos y SPAs"
+    ],
+
+    "ejemplo": "document.addEventListener('DOMContentLoaded', () => { attachHandlers(); });",
+
+    "importancia": "Permite inicialización temprana y mejora percepciones de rendimiento.",
+
+    "relacion_con_ingenieria": "Usar para enlazar eventos y construir vistas; evitar manipular recursos que aún no se han cargado."
+  },
+
+  "resize": {
+    "titulo": "Evento resize",
+
+    "introduccion": "Se dispara cuando cambia el tamaño de la ventana (viewport) o de algunos elementos redimensionables.",
+
+    "concepto_tecnico": "Alta frecuencia al arrastrar el borde de la ventana; los handlers pueden provocar reflows costosos, por lo que se recomienda throttling.",
+
+    "funcionamiento": "Se emplea para recalcular layouts responsivos, ajustar canvas o re-renderizar componentes adaptativos.",
+
+    "componentes": [
+      "window.onresize",
+      "Throttling/debounce",
+      "Recálculo de layout y media queries"
+    ],
+
+    "ejemplo": "window.addEventListener('resize', throttle(() => { updateLayout(); }, 100));",
+
+    "importancia": "Fundamental para comportamiento responsive y rendering correcto en cambios de tamaño.",
+
+    "relacion_con_ingenieria": "Minimizar trabajo en handlers y preferir CSS (media queries) cuando sea posible; usar ResizeObserver para elementos."
+  },
+
+  "scroll": {
+    "titulo": "Evento scroll",
+
+    "introduccion": "Se dispara cuando el usuario desplaza el contenido dentro de una ventana o elemento con overflow.",
+
+    "concepto_tecnico": "Puede emitir muchos eventos por segundo; impacta rendimiento si se realizan operaciones de layout o pintura en cada evento.",
+
+    "funcionamiento": "Se usa para lazy-loading, efectos parallax o actualizar posiciones de UI; optimizar con passive listeners y requestAnimationFrame.",
+
+    "componentes": [
+      "window.scrollY/scrollX",
+      "Element.scrollTop",
+      "Passive listeners para mejorar performance"
+    ],
+
+    "ejemplo": "window.addEventListener('scroll', () => { requestAnimationFrame(updateStickyHeader); }, { passive: true });",
+
+    "importancia": "Clave para experiencias de navegación y carga eficiente de contenidos.",
+
+    "relacion_con_ingenieria": "Usar passive: true, evitar reads que provoquen reflow y emplear IntersectionObserver para lazy-loading."
+  },
+
+  "beforeunload": {
+    "titulo": "Evento beforeunload",
+
+    "introduccion": "Se dispara antes de que la página o pestaña se descargue; permite advertir al usuario sobre datos no guardados.",
+
+    "concepto_tecnico": "Los navegadores modernos restringen su uso por seguridad/usabilidad: mostrar diálogos personalizados es limitado; se permite cancelar mediante retorno de cadena en handler en algunos navegadores.",
+
+    "funcionamiento": "Se utiliza para prevenir pérdida accidental de datos, pero su uso debe ser mínimo y justificable.",
+
+    "componentes": [
+      "Posible diálogo nativo de confirmación",
+      "Limitaciones en modern browsers",
+      "Uso responsable"
+    ],
+
+    "ejemplo": "window.addEventListener('beforeunload', (e) => { if (unsavedChanges) { e.preventDefault(); e.returnValue = ''; } });",
+
+    "importancia": "Ayuda a proteger datos de usuario, aunque su abuso empeora la experiencia.",
+
+    "relacion_con_ingenieria": "Usar sólo cuando haya riesgo real de pérdida de datos y proveer guardado automático como alternativa."
+  },
+
+  "unload": {
+    "titulo": "Evento unload",
+
+    "introduccion": "Se dispara cuando la página se está descargando; es el último evento en la vida de la página.",
+
+    "concepto_tecnico": "En muchos navegadores su uso está limitado y no permite acciones asíncronas fiables (peticiones fetch suelen ser abortadas).",
+
+    "funcionamiento": "Se usa para limpieza sincrónica (ej. liberar recursos), pero no para operaciones de red dependientes.",
+
+    "componentes": [
+      "Limitaciones para operaciones asíncronas",
+      "Uso para limpieza inmediata",
+      "Compatibilidad entre browsers"
+    ],
+
+    "ejemplo": "window.addEventListener('unload', () => { /* cleanup sync */ });",
+
+    "importancia": "Permite liberar recursos pero no confiar en él para persistencia de datos.",
+
+    "relacion_con_ingenieria": "Preferir guardado periódico durante la sesión y usar Beacon API para enviar datos al cerrar si es necesario."
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Juego</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+    <!-- NavBar -->
+    <div th:replace="Elementos/NavBar :: NavBar"> </div>
+
+    <!-- Main -->
+    <main class="flex-grow-1">
+
+        <div class="contenedor-juego">
+
+            <!-- PANEL IZQUIERDO -->
+            <div class="panel-lateral">
+
+                <div class="panel-controles">
+                    <label>Alto</label>
+                    <input id="alto" type="number" value="10" min="5">
+
+                    <label>Ancho</label>
+                    <input id="ancho" type="number" value="10" min="5">
+
+                    <button onclick="crearTablero()" class="btn btn-primary">
+                        Generar tablero
+                    </button>
+                </div>
+
+                <div class="panel-puntaje">
+
+                    <h4>Puntaje</h4>
+
+                    <p>
+                        💊 Puntos:
+                        <span id="puntos">0</span>
+                    </p>
+
+                    <p>
+                        ❤️ Vidas:
+                        <span id="vidas">3</span>
+                    </p>
+
+                </div>
+
+                <div class="panel-instrucciones">
+                    <h4>Instrucciones</h4>
+
+                    <p>⬆️⬇️⬅️➡️ Usa las flechas para moverte</p>
+                    <p>🩻 Evita obstáculos</p>
+                    <p>🦠 Evita enemigos</p>
+                    <p>💊 Recoge puntos</p>
+                </div>
+
+            </div>
+
+            <!-- TABLERO -->
+            <div class="zona-tablero">
+                <table id="tablero"></table>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script th:src="@{/js/Juego.js}"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <div th:replace="Elementos/Footer:: Footer"> </div>
+
+</body>
+</html>

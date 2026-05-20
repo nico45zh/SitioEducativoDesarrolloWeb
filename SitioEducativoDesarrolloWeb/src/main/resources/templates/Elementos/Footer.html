@@ -5,16 +5,55 @@
     <title>Footer</title>
 </head>
 <body>
-<footer class="bg-dark text-white py-2 mt-auto" th:fragment="Footer">
-    <div class="container-sm text-center">
-        <small>
-            Sitio Educativo de Desarrollo Web |
-            Universidad Nacional de Costa Rica |
-            Nicolas Zarate H. |
-            nicolas.zarate.hernandez@est.una.ac.cr |
-            Copyright © 2026
+<footer class="bg-dark text-white py-4 mt-auto" th:fragment="Footer">
+    <div class="container">
+        <!-- Información principal -->
+        <div class="row">
+            <!-- Columna 1: Información académica -->
+            <div class="col-md-4 mb-3 mb-md-0">
+                <h6 class="text-uppercase">Sitio Educativo</h6>
+                <small>
+                    Universidad Nacional de Costa Rica<br>
+                    Desarrollo Web<br>
+                    Nicolás Zárate H.
+                </small>
+            </div>
 
-        </small>
+            <!-- Columna 2: Contacto rápido -->
+            <div class="col-md-4 mb-3 mb-md-0">
+                <h6 class="text-uppercase">Contacto Rápido</h6>
+                <div class="mt-2">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/message/X2SNMXYAGZZDB1"
+                       target="_blank"
+                       class="btn btn-sm btn-success mb-1 me-1">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:nicolas.zarate.hernandez@est.una.ac.cr"
+                       class="btn btn-sm btn-danger mb-1">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna 3: Copyright -->
+            <div class="col-md-4">
+                <small class="text-white-50">
+                    <i class="far fa-copyright"></i> 2026<br>
+                    Todos los derechos reservados
+                </small>
+            </div>
+        </div>
+
+        <!-- Horario de atención por WhatsApp -->
+        <hr class="my-3">
+        <div class="text-center">
+            <small class="text-white-50">
+                <i class="fab fa-whatsapp text-success"></i>
+                Horario de Atención: Lunes a Viernes 9:00 a.m. - 11:00 p.m.
+            </small>
+        </div>
     </div>
 </footer>
 

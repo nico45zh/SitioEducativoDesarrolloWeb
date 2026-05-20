@@ -1,0 +1,72 @@
+{
+  "tema": "JavaScript",
+
+  "preguntas": [
+
+    {
+      "pregunta": "¿Qué evento ocurre al hacer click?",
+
+      "opciones": [
+        "hover",
+        "click",
+        "load",
+        "change"
+      ],
+
+      "correcta": 1
+    },
+
+    {
+      "pregunta": "¿Qué función muestra mensajes en consola?",
+
+      "opciones": [
+        "print()",
+        "echo()",
+        "console.log()",
+        "alert()"
+      ],
+
+      "correcta": 2
+    },
+
+    {
+      "pregunta": "¿Qué evento ocurre al cargar el documento HTML?",
+
+      "opciones": [
+        "scroll",
+        "resize",
+        "DOMContentLoaded",
+        "focus"
+      ],
+
+      "correcta": 2
+    },
+
+    {
+      "pregunta": "¿Qué palabra declara variables modernas?",
+
+      "opciones": [
+        "var",
+        "define",
+        "let",
+        "int"
+      ],
+
+      "correcta": 2
+    },
+
+    {
+      "pregunta": "¿Qué estructura repite instrucciones?",
+
+      "opciones": [
+        "if",
+        "switch",
+        "for",
+        "break"
+      ],
+
+      "correcta": 2
+    }
+
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "tema": "Spring Boot",
+
+  "preguntas": [
+
+    {
+      "pregunta": "¿Qué es Spring Boot?",
+
+      "opciones": [
+        "Un framework para desarrollo web en Java",
+        "Un lenguaje de programación",
+        "Una base de datos"
+      ],
+
+      "correcta": 0
+    },
+
+    {
+      "pregunta": "¿Qué lenguaje utiliza Spring Boot principalmente?",
+
+      "opciones": [
+        "Python",
+        "Java",
+        "PHP"
+      ],
+
+      "correcta": 1
+    },
+
+    {
+      "pregunta": "¿Cuál es una ventaja de Spring Boot?",
+
+      "opciones": [
+        "Configura automáticamente muchos componentes",
+        "Solo funciona sin internet",
+        "No permite crear APIs"
+      ],
+
+      "correcta": 0
+    },
+
+    {
+      "pregunta": "¿Qué anotación se usa para indicar la clase principal de Spring Boot?",
+
+      "opciones": [
+        "@SpringBootApplication",
+        "@Controller",
+        "@Service"
+      ],
+
+      "correcta": 0
+    },
+
+    {
+      "pregunta": "¿Qué puede desarrollarse con Spring Boot?",
+
+      "opciones": [
+        "Aplicaciones web y APIs REST",
+        "Únicamente videojuegos",
+        "Solo aplicaciones móviles"
+      ],
+
+      "correcta": 0
+    }
+
+  ]
+}

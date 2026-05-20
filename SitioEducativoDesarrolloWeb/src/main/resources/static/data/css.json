@@ -1,0 +1,535 @@
+{
+  "Qué es CSS": {
+    "titulo": "¿Qué es CSS?",
+
+    "introduccion": "CSS (Cascading Style Sheets) es el lenguaje usado para describir la presentación de documentos HTML o XML. Permite separar la estructura (HTML) del estilo (tipografía, color, disposición), facilitando mantenibilidad y reuso.",
+
+    "concepto_tecnico": "CSS es un lenguaje declarativo compuesto por reglas que asocian selectores a declaraciones (propiedad: valor). El motor de renderizado del navegador procesa las reglas, calcula cascada y especificidad, y aplica estilos al árbol de renderizado.",
+
+    "funcionamiento": "El navegador carga hojas de estilo (externas, internas o en línea), las parsea en una hoja de estilos en memoria y, junto con el HTML, calcula el estilo final (cascade, herencia, especificidad). Luego pinta los elementos según el modelo de caja, layout y pintura.",
+
+    "componentes": [
+      "Selectores (elementos, clases, IDs, atributos, pseudo-clases)",
+      "Declaraciones: pares propiedad:valor",
+      "Reglas agrupadas en reglas @ (media queries, keyframes)",
+      "Modelo de caja (box model)",
+      "Cascada y especificidad"
+    ],
+
+    "ejemplo": "h1 { color: #333; font-size: 2rem; }",
+
+    "importancia": "CSS define la apariencia y experiencia de usuario. Es esencial para accesibilidad, adaptabilidad (responsive) y rendimiento visual.",
+
+    "relacion_con_ingenieria": "Un ingeniero debe conocer CSS para implementar interfaces usables, optimizar rendimiento de pintura/reflow, y estructurar estilos escalables en aplicaciones grandes."
+  },
+
+  "CSS en línea": {
+    "titulo": "CSS en línea",
+
+    "introduccion": "Estilos aplicados directamente al atributo style de un elemento HTML.",
+
+    "concepto_tecnico": "Se definen en el atributo style, sobrescriben reglas externas e internas por tener mayor especificidad (inline tiene prioridad salvo !important).",
+
+    "funcionamiento": "El parser HTML asigna los estilos inline al nodo correspondiente durante la construcción del DOM; estos se mezclan al calcular el estilo final.",
+
+    "componentes": [
+      "Atributo style",
+      "Declaraciones separadas por punto y coma",
+      "Prioridad frente a reglas externas"
+    ],
+
+    "ejemplo": "<p style=\"color: red; margin: 0;\">Texto</p>",
+
+    "importancia": "Útil para pruebas rápidas o estilos dinámicos generados por scripts, pero perjudica separación de preocupaciones y mantenibilidad.",
+
+    "relacion_con_ingenieria": "Evitar uso sistemático de inline; preferir clases y hojas externas. Usar inline sólo para overrides puntuales o valores generados por JS."
+  },
+
+  "CSS interno": {
+    "titulo": "CSS interno",
+
+    "introduccion": "Reglas CSS incluidas dentro de un elemento &lt;style&gt; en el &lt;head&gt; de un documento.",
+
+    "concepto_tecnico": "Se parsean junto con el documento y se aplican sólo a esa página; tienen mayor prioridad que hojas externas si aparecen después, por orden de carga.",
+
+    "funcionamiento": "El navegador procesa el bloque &lt;style&gt; y añade las reglas a la cascada del documento actual.",
+
+    "componentes": [
+      "Etiqueta &lt;style&gt;",
+      "Reglas y selectores",
+      "Ámbito de la página"
+    ],
+
+    "ejemplo": "&lt;style&gt; .btn { background: blue; } &lt;/style&gt;",
+
+    "importancia": "Útil para estilos específicos de una página o para carga crítica en el head; sin embargo, reduce reuso entre páginas.",
+
+    "relacion_con_ingenieria": "Usarlo con criterio: reservar para CSS crítico en el head que mejora el rendimiento o pruebas rápidas. Mantener estilos compartidos en archivos externos."
+  },
+
+  "CSS externo": {
+    "titulo": "CSS externo",
+
+    "introduccion": "Hojas de estilo almacenadas en archivos .css vinculadas con <link rel=\"stylesheet\">.",
+
+    "concepto_tecnico": "Permite caché por el navegador, separación de responsabilidades y reutilización entre múltiples páginas.",
+
+    "funcionamiento": "El navegador descarga las hojas vinculadas, las parsea y las incorpora a la cascada global del documento.",
+
+    "componentes": [
+      "Archivo .css",
+      "Vínculo con <link>",
+      "Soporte para @import y @media"
+    ],
+
+    "ejemplo": "<link rel=\"stylesheet\" href=\"/styles/main.css\">",
+
+    "importancia": "Recomendado para producción: mejora mantenibilidad, rendimiento y consistencia de estilos.",
+
+    "relacion_con_ingenieria": "Organizar hojas por responsabilidad (base, layout, componentes), minificar y aprovechar CDN/caché."
+  },
+
+  "Selector por etiqueta": {
+    "titulo": "Selector por etiqueta",
+
+    "introduccion": "Selecciona elementos por su nombre de etiqueta (p, h1, div).",
+
+    "concepto_tecnico": "Baja especificidad; aplicado a todas las instancias de la etiqueta en el ámbito donde se declare.",
+
+    "funcionamiento": "El motor compara el nombre de nodo en el DOM con el selector para determinar coincidencias.",
+
+    "componentes": [
+      "Nombre de la etiqueta",
+      "Compatibilidad con pseudo-elementos y combinadores"
+    ],
+
+    "ejemplo": "p { line-height: 1.6; }",
+
+    "importancia": "Útil para reglas globales y estilos base; preferir normalización/reescalado para consistencia.",
+
+    "relacion_con_ingenieria": "Usar con prudencia para no afectar inesperadamente componentes reutilizables. Preferir clases para componentes."
+  },
+
+  "Selector por clase": {
+    "titulo": "Selector por clase",
+
+    "introduccion": "Selecciona elementos que tengan el atributo class con un valor específico.",
+
+    "concepto_tecnico": "Mayor especificidad que selector por etiqueta; combinable y reutilizable para componentes.",
+
+    "funcionamiento": "Se aplica a cualquier elemento con class=\"nombre\" o clase compuesta. Permite estilos compuestos.",
+
+    "componentes": [
+      "Sintaxis .clase",
+      "Múltiples clases en un elemento",
+      "Combinación con selectores descendentes"
+    ],
+
+    "ejemplo": " .card { box-shadow: 0 2px 6px rgba(0,0,0,0.1); } ",
+
+    "importancia": "Patrón central para diseño modular y reusable (BEM, utility classes).",
+
+    "relacion_con_ingenieria": "Diseñar convenciones de nombres (BEM, SMACSS) para mantener escalabilidad y evitar colisiones."
+  },
+
+  "Selector por id": {
+    "titulo": "Selector por id",
+
+    "introduccion": "Selecciona un único elemento por su atributo id.",
+
+    "concepto_tecnico": "Alta especificidad; se recomienda para elementos únicos y no para estilos reutilizables.",
+
+    "funcionamiento": "Se aplica al elemento con id especificado; si hay varios (no válido en HTML), el selector afecta al primero según el DOM.",
+
+    "componentes": [
+      "Sintaxis #id",
+      "Unicidad esperada",
+      "Interacción con JS (getElementById)"
+    ],
+
+    "ejemplo": "#nav { background: #fff; }",
+
+    "importancia": "Útil para hooks de scripting o estilos puntuales; evitar abusar para temas de especificidad.",
+
+    "relacion_con_ingenieria": "Preferir clases para estilos; usar id para anclas o integración con scripts cuando sea necesario."
+  },
+
+  "Selectores descendentes": {
+    "titulo": "Selectores descendentes",
+
+    "introduccion": "Seleccionan elementos basándose en su relación jerárquica (hijos, nietos).",
+
+    "concepto_tecnico": "Incluyen combinadores: espacio (descendiente), > (hijo directo), + (adyacente), ~ (general sibling). Especificidad combinada depende de selectores usados.",
+
+    "funcionamiento": "El motor evalúa la estructura DOM para encontrar coincidencias jerárquicas.",
+
+    "componentes": [
+      "Combinador espacio",
+      "Combinador >",
+      "Combinadores + y ~"
+    ],
+
+    "ejemplo": ".menu li a { display: block; }",
+
+    "importancia": "Permiten estilos contextualizados, pero pueden aumentar acoplamiento y coste de cálculo si son muy profundos.",
+
+    "relacion_con_ingenieria": "Preferir selectores simples y evitar selectores profundamente anidados para rendimiento y mantenibilidad."
+  },
+
+  "Pseudo-clases": {
+    "titulo": "Pseudo-clases",
+
+    "introduccion": "Clases dinámicas que representan un estado o posición (hover, active, :nth-child).",
+
+    "concepto_tecnico": "No son clases reales en el DOM; el motor las aplica según estado del elemento o su posición en el árbol.",
+
+    "funcionamiento": "Se evalúan en tiempo de render y pueden cambiar con interacción; impactan en repaint/reflow según propiedades cambiadas.",
+
+    "componentes": [
+      ":hover, :active, :focus",
+      ":nth-child(), :first-child, :last-child",
+      ":not()"
+    ],
+
+    "ejemplo": "a:hover { text-decoration: underline; }",
+
+    "importancia": "Fundamentales para interactividad sin JS y para aplicar reglas basadas en estructura.",
+
+    "relacion_con_ingenieria": "Usar para mejorar UX; tener en cuenta accesibilidad (focus-visible) y comportamiento en dispositivos táctiles."
+  },
+
+  "Pseudo-elementos": {
+    "titulo": "Pseudo-elementos",
+
+    "introduccion": "Permiten estilizar partes de un elemento (::before, ::after, ::first-line).",
+
+    "concepto_tecnico": "Se crean cajas virtuales fuera o dentro del contenido del elemento para aplicar estilos decorativos o estructurales.",
+
+    "funcionamiento": "Se consideran durante la generación del layout y pueden contener contenido generado mediante la propiedad content.",
+
+    "componentes": [
+      "::before, ::after",
+      "::first-letter, ::first-line",
+      "content y display"
+    ],
+
+    "ejemplo": ".badge::before { content: '\\2022'; margin-right: 0.25rem; }",
+
+    "importancia": "Permiten añadir elementos decorativos sin modificar el HTML, mejorando separación entre estructura y presentación.",
+
+    "relacion_con_ingenieria": "Útiles para componentes, pero evitar abuso que complique el DOM lógico y la accesibilidad." 
+  },
+
+  "Color": {
+    "titulo": "Color",
+
+    "introduccion": "Propiedades relacionadas con color de texto, bordes y fondos (color, rgba, hsl).",
+
+    "concepto_tecnico": "Soporta diversas notaciones (#hex, rgb(), rgba(), hsl(), hsla(), nombres de color). Incluye opacidad y mezclas.",
+
+    "funcionamiento": "El navegador convierte valores a un espacio de color interno y los aplica durante la etapa de pintura.",
+
+    "componentes": [
+      "Formatos: hex, rgb, rgba, hsl",
+      "Propiedades: color, background-color, border-color",
+      "Transparencia y composición"
+    ],
+
+    "ejemplo": "p { color: #222; background-color: rgba(255,255,255,0.8); }",
+
+    "importancia": "Clave para legibilidad, contraste y accesibilidad (WCAG).",
+
+    "relacion_con_ingenieria": "Seleccionar paletas accesibles, variables CSS para consistencia, y probar contraste en diferentes dispositivos."
+  },
+
+  "Background": {
+    "titulo": "Background",
+
+    "introduccion": "Propiedades para fondos: color, imágenes, gradientes, posición y repetición.",
+
+    "concepto_tecnico": "Incluye shorthand background y propiedades individuales (background-image,-position,size,-repeat,-attachment). Soporta múltiples capas y gradientes.",
+
+    "funcionamiento": "Se calcula por capa y se pinta detrás del contenido del elemento; imágenes pueden solicitar recursos y afectar rendimiento.",
+
+    "componentes": [
+      "background-color",
+      "background-image (url, linear-gradient)",
+      "background-size y background-position",
+      "background-repeat"
+    ],
+
+    "ejemplo": ".hero { background: linear-gradient(90deg,#123,#456); }",
+
+    "importancia": "Fuerte impacto visual; usar imágenes optimizadas y preferir gradientes o SVG cuando sea posible.",
+
+    "relacion_con_ingenieria": "Optimizar imágenes, usar texturas con sprites o SVG, y gestionar carga diferida para mejorar rendimiento."
+  },
+
+  "Font-family": {
+    "titulo": "Font-family",
+
+    "introduccion": "Define la familia tipográfica que usará el texto.",
+
+    "concepto_tecnico": "Se especifica una lista de fuentes separadas por comas; el navegador selecciona la primera disponible. Se pueden usar fuentes web mediante @font-face.",
+
+    "funcionamiento": "La carga de fuentes web puede bloquear el render de texto (FOIT/FOUT); se deben usar estrategias de carga y formatos apropiados.",
+
+    "componentes": [
+      "Listas de fuentes segregadas por comas",
+      "@font-face para fuentes web",
+      "Fallbacks" 
+    ],
+
+    "ejemplo": "body { font-family: 'Inter', system-ui, Arial, sans-serif; }",
+
+    "importancia": "Afecta legibilidad y tono visual; importante para internacionalización y rendimiento.",
+
+    "relacion_con_ingenieria": "Configurar cargas de fuentes con font-display, subsetting y formatos modernos para rendimiento."
+  },
+
+  "Font-size": {
+    "titulo": "Font-size",
+
+    "introduccion": "Controla el tamaño del texto; puede especificarse en px, em, rem, %, vw, etc.",
+
+    "concepto_tecnico": "Unidades relativas (em, rem, %) permiten escalabilidad y accesibilidad; unidades absolutas (px) son fijas.",
+
+    "funcionamiento": "El tamaño base (root font-size) determina rem; em es relativo al font-size del elemento padre. Ajustes pueden causar reflow.",
+
+    "componentes": [
+      "Unidades: px, em, rem, %",
+      "Herencia y cálculo relativo",
+      "Medidas responsivas (clamp, calc)"
+    ],
+
+    "ejemplo": "html { font-size: 16px; } h1 { font-size: 2rem; }",
+
+    "importancia": "Clave para accesibilidad y diseño responsivo.",
+
+    "relacion_con_ingenieria": "Preferir unidades relativas y estrategias fluidas (clamp) para escalabilidad entre dispositivos."
+  },
+
+  "Margin": {
+    "titulo": "Margin",
+
+    "introduccion": "Espacio exterior de un elemento que separa con sus vecinos.",
+
+    "concepto_tecnico": "Afecta el flujo del layout; márgenes verticales adyacentes pueden colapsar (margin collapsing).",
+
+    "funcionamiento": "Se calcula durante la fase de layout; cambios pueden generar reflow y afectar rendimiento.",
+
+    "componentes": [
+      "margin-top/right/bottom/left",
+      "Shorthand margin: 1px 2px",
+      "Colapso de márgenes"
+    ],
+
+    "ejemplo": ".section { margin: 2rem 0; }",
+
+    "importancia": "Herramienta principal para separación entre bloques; entender colapso es crucial.",
+
+    "relacion_con_ingenieria": "Usar padding o flex gap cuando se desea evitar colapso; optimizar layout para minimizar reflows."
+  },
+
+  "Padding": {
+    "titulo": "Padding",
+
+    "introduccion": "Espacio interior entre el borde del elemento y su contenido.",
+
+    "concepto_tecnico": "Forma parte del box model y aumenta el tamaño visible del elemento si el box-sizing es content-box.",
+
+    "funcionamiento": "Influye en cálculo de tamaño y disposición; se puede usar para crear separación interna sin afectar elementos vecinos.",
+
+    "componentes": [
+      "padding-top/right/bottom/left",
+      "Shorthand padding",
+      "Relación con box-sizing"
+    ],
+
+    "ejemplo": ".card { padding: 1rem; }",
+
+    "importancia": "Clave para espaciado interno y confort visual.",
+
+    "relacion_con_ingenieria": "Preferir padding para separar contenido interno; controlar box-sizing para comportamientos predecibles."
+  },
+
+  "Border": {
+    "titulo": "Border",
+
+    "introduccion": "Borde que rodea el padding y el contenido de un elemento.",
+
+    "concepto_tecnico": "Se compone de ancho, estilo y color; las esquinas pueden redondearse con border-radius.",
+
+    "funcionamiento": "Afecta el tamaño total del elemento según box-sizing; puede causar repaint al cambiar.",
+
+    "componentes": [
+      "border-width, border-style, border-color",
+      "border-radius",
+      "box-shadow (decorativo)"
+    ],
+
+    "ejemplo": ".input { border: 1px solid #ccc; border-radius: 4px; }",
+
+    "importancia": "Útil para delimitar y jerarquizar elementos visualmente.",
+
+    "relacion_con_ingenieria": "Diseñar bordes coherentes y optimizar para accesibilidad y rendimiento."
+  },
+
+  "Width": {
+    "titulo": "Width",
+
+    "introduccion": "Ancho del área de contenido del elemento (excluye padding y border si box-sizing es content-box).",
+
+    "concepto_tecnico": "Puede ser absoluta o relativa; valores auto permiten que el layout determine el ancho.",
+
+    "funcionamiento": "Influye en el flujo y puede provocar reflow si cambia dinámicamente.",
+
+    "componentes": [
+      "width, min-width, max-width",
+      "Unidades relativas y absolutas",
+      "Comportamiento en contenedores flex/grid"
+    ],
+
+    "ejemplo": ".container { max-width: 1200px; width: 90%; }",
+
+    "importancia": "Controla la adaptabilidad de diseños responsivos.",
+
+    "relacion_con_ingenieria": "Combinar max/min con % y media queries para diseños robustos."
+  },
+
+  "Height": {
+    "titulo": "Height",
+
+    "introduccion": "Altura del área de contenido del elemento.",
+
+    "concepto_tecnico": "Al igual que width, puede usar min/max y unidades relativas; height:auto ajusta al contenido.",
+
+    "funcionamiento": "Cambios pueden causar reflow; usar con cuidado en elementos dinámicos.",
+
+    "componentes": [
+      "height, min-height, max-height",
+      "Unidades: px, %, vh",
+      "Contenido y overflow"
+    ],
+
+    "ejemplo": ".hero { height: 60vh; }",
+
+    "importancia": "Útil para layouts con alturas relativas y para controlar scroll/overflow.",
+
+    "relacion_con_ingenieria": "Evitar fijar alturas rígidas en contenido variable; preferir min-height y adaptabilidad."
+  },
+
+  "Box Model": {
+    "titulo": "Box Model",
+
+    "introduccion": "Modelo que describe cómo se calcula el tamaño de un elemento: content, padding, border, margin.",
+
+    "concepto_tecnico": "Box-sizing determina si width/height incluyen padding+border (border-box) o no (content-box).",
+
+    "funcionamiento": "El motor calcula tamaño y posición según box model al realizar el layout y pintar.",
+
+    "componentes": [
+      "Content box",
+      "Padding",
+      "Border",
+      "Margin",
+      "box-sizing"
+    ],
+
+    "ejemplo": "*, *::before, *::after { box-sizing: border-box; }",
+
+    "importancia": "Comprenderlo evita errores de cálculo en tamaños y facilita layouts precisos.",
+
+    "relacion_con_ingenieria": "Aplicar box-sizing:border-box globalmente para comportamiento predecible y menos cálculos de ancho."
+  },
+
+  "Display": {
+    "titulo": "Display",
+
+    "introduccion": "Determina cómo se participa un elemento en el layout: block, inline, inline-block, none, etc.",
+
+    "concepto_tecnico": "Afecta el flujo del documento y la forma en que se calculan ancho/alto y cajas de formato.",
+
+    "funcionamiento": "Cambiar display puede cambiar completamente el layout y la relación entre elementos (reflow).",
+
+    "componentes": [
+      "block, inline, inline-block",
+      "none (ocultar)",
+      "flex, grid (display containers)"
+    ],
+
+    "ejemplo": "span { display: inline-block; }",
+
+    "importancia": "Fundamental para estructurar layouts y controlar comportamiento de elementos.",
+
+    "relacion_con_ingenieria": "Elegir display apropiado para patrones: flex/grid para layouts complejos, inline para texto."
+  },
+
+  "Position": {
+    "titulo": "Position",
+
+    "introduccion": "Controla el esquema de posicionamiento: static, relative, absolute, fixed, sticky.",
+
+    "concepto_tecnico": "Cada tipo determina cómo el elemento se ubica respecto al flujo normal y a su contenedor posicionado.",
+
+    "funcionamiento": "Position relative ajusta sin sacar del flujo; absolute lo saca y lo posiciona respecto al ancestro posicionado; sticky combina relative y fixed según scroll.",
+
+    "componentes": [
+      "static, relative, absolute, fixed, sticky",
+      "Propiedades top/right/bottom/left",
+      "Contexto de apilamiento (z-index)"
+    ],
+
+    "ejemplo": ".modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); }",
+
+    "importancia": "Clave para overlays, menús y diseños específicos.",
+
+    "relacion_con_ingenieria": "Comprender cómo afectan al flujo y al stacking context evita bugs visuales complejos."
+  },
+
+  "Flexbox": {
+    "titulo": "Flexbox",
+
+    "introduccion": "Modelo de layout unidimensional para distribuir espacio entre elementos en un contenedor flexible.",
+
+    "concepto_tecnico": "Contenedores flex establecen ejes principal y transversal; propiedades como justify-content, align-items y flex permiten control fino del alineamiento y distribución.",
+
+    "funcionamiento": "El navegador calcula tamaños flexibles y distribuye espacio según las reglas de flex-grow/shrink/basis y alineamientos.",
+
+    "componentes": [
+      "display: flex;",
+      "flex-direction, justify-content, align-items",
+      "flex (shorthand) y gap"
+    ],
+
+    "ejemplo": ".row { display: flex; gap: 1rem; }",
+
+    "importancia": "Resuelve muchos problemas de alineamiento y distribución sin hacks de floats o posicionamiento.",
+
+    "relacion_con_ingenieria": "Usar flex para componentes y layouts unidimensionales; combinar con grid para layouts complejos."
+  },
+
+  "Buenas prácticas de estilos": {
+    "titulo": "Buenas prácticas de estilos",
+
+    "introduccion": "Principios y convenciones para escribir CSS mantenible, escalable y accesible.",
+
+    "concepto_tecnico": "Incluye modularidad (component-driven), methodologies (BEM, ITCSS), variables CSS, y separación de responsabilidades.",
+
+    "funcionamiento": "Adoptar convenciones reduce colisiones, facilita refactor y mejora rendimiento al minimizar recalculos y duplicados.",
+
+    "componentes": [
+      "Usar variables (--var) y temas",
+      "Seguir convenciones de nombres (BEM)",
+      "Minimizar selectores específicos y anidados",
+      "Optimizar carga de CSS y evitar repaints innecesarios",
+      "Documentar estilos y crear tokens de diseño"
+    ],
+
+    "ejemplo": "--color-primary: #0d6efd; .btn--primary { background: var(--color-primary); }",
+
+    "importancia": "Mejora productividad del equipo, reusabilidad y rendimiento.",
+
+    "relacion_con_ingenieria": "Imponer guías de estilo y auditorías de CSS en equipos grandes; usar linter y herramientas de análisis para asegurar calidad."
+  }
+}
