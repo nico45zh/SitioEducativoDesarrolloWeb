@@ -1,146 +1,314 @@
-# SitioEducativoDesarrolloWeb
-# 📚 Sitio Web Educativo – Programación IV
+# 📚 SitioEducativoDesarrolloWeb
 
-Este proyecto consiste en el desarrollo de un sitio web educativo que funciona como repositorio de los temas estudiados durante el curso de **Programación IV**. El sitio se construye de forma progresiva, incorporando nuevos contenidos conforme avanza el curso.
+## 🌐 Plataforma Educativa – Programación IV
 
-## 🎯 Objetivo
+Este proyecto consiste en el desarrollo de una plataforma web educativa creada como parte del curso de **Programación IV – EIF209** de la Universidad Nacional de Costa Rica.
 
-Aplicar los conocimientos teóricos y prácticos del desarrollo web mediante la creación de un sitio real, organizado y funcional, que permita reforzar el aprendizaje de los temas vistos en clase.
-
----
-
-## 🛠️ Tecnologías Utilizadas
-
-* HTML5
-* CSS3
-* Framework responsive (Bootstrap / Tailwind CSS / Foundation)
-* Navegador web para pruebas
+La aplicación funciona como un repositorio interactivo de contenidos relacionados con el desarrollo web moderno, integrando teoría, ejemplos prácticos, cuestionarios y dinámicas interactivas para reforzar el aprendizaje de los estudiantes.
 
 ---
 
-## 📂 Estructura del Sitio
+# 🎯 Objetivo del Proyecto
 
-El sitio está organizado por temas y subtemas, permitiendo una navegación clara e intuitiva desde la página principal (`index.html`).
+Aplicar conocimientos de desarrollo frontend y backend mediante la construcción de un sitio web funcional, organizado y responsive, utilizando tecnologías modernas como:
 
+- HTML5
+- CSS3
+- Bootstrap 5
+- JavaScript
+- Spring Boot
+- Thymeleaf
+
+El proyecto busca servir como apoyo educativo para comprender conceptos fundamentales del desarrollo web.
+
+---
+
+# 🛠️ Tecnologías Utilizadas
+
+## Frontend
+- HTML5
+- CSS3
+- Bootstrap 5
+- Bootstrap Icons
+- JavaScript
+
+## Backend
+- Java Spring Boot
+- Thymeleaf
+- Maven
+
+## Herramientas
+- IntelliJ IDEA
+- Git y GitHub
+- Navegador Web
+
+---
+
+# 📂 Estructura del Proyecto
+
+```text
+SitioEducativoDesarrolloWeb/
+│
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com.una.sitioeducativodesarrolloweb/
+│       │       ├── Controller/
+│       │       │   └── ControllerPage.java
+│       │       │
+│       │       ├── ServletInitializer.java
+│       │       └── SitioEducativoDesarrolloWebApplication.java
+│       │
+│       └── resources/
+│           ├── static/
+│           │   ├── css/
+│           │   │   └── Styles.css
+│           │   │
+│           │   ├── js/
+│           │   │   ├── Inicio.js
+│           │   │   ├── Acercade.js
+│           │   │   ├── Cuestionarios.js
+│           │   │   └── Juego.js
+│           │   │
+│           │   ├── img/
+│           │   │   └── logo.png
+│           │   │
+│           │   └── data/
+│           │       ├── html.json
+│           │       ├── css.json
+│           │       ├── javascript.json
+│           │       ├── internet.json
+│           │       ├── backend.json
+│           │       ├── htmlQuiz.json
+│           │       ├── cssQuiz.json
+│           │       ├── javascriptQuiz.json
+│           │       ├── internetQuiz.json
+│           │       └── backendQuiz.json
+│           │
+│           └── templates/
+│               ├── Inicio.html
+│               ├── Temas.html
+│               ├── Cuestionarios.html
+│               ├── Juego.html
+│               ├── Acercade.html
+│               │
+│               └── Elementos/
+│                   ├── NavBar.html
+│                   └── Footer.html
+│
+└── pom.xml
 ```
-📁 proyecto/
- ├── index.html
- ├── css/
- ├── js/
- ├── img/
- ├── temas/
- │    ├── internet-web/
- │    ├── html/
- │    ├── css/
- │    └── backend/
+
+---
+
+# 📖 Contenido del Sitio
+
+## 🌐 1. Fundamentos de Internet y la Web
+
+Incluye conceptos básicos necesarios para comprender el funcionamiento de Internet y la comunicación web.
+
+### Temas:
+- Internet vs Web
+- Modelo OSI
+- HTTP y HTTPS
+- DNS
+- Direcciones IP
+- Métodos HTTP
+- Códigos de estado
+- Arquitectura Cliente-Servidor
+
+---
+
+## 🧱 2. HTML
+
+Explica la estructura básica de las páginas web y las principales etiquetas utilizadas en HTML5.
+
+### Temas:
+- Estructura de un documento HTML
+- Etiquetas principales
+- Formularios
+- Tablas
+- Multimedia
+- Etiquetas semánticas
+- Inputs y validaciones
+
+---
+
+## 🎨 3. CSS
+
+Introduce conceptos de diseño y estilos para páginas web modernas.
+
+### Temas:
+- Selectores
+- Colores y tipografía
+- Modelo de caja
+- Flexbox
+- Grid
+- Responsive Design
+- Animaciones y efectos visuales
+
+---
+
+## ⚡ 4. JavaScript
+
+Se presentan conceptos básicos de programación para agregar interactividad al sitio.
+
+### Temas:
+- Variables
+- Funciones
+- Eventos
+- DOM
+- Condicionales
+- Ciclos
+- Manipulación dinámica del contenido
+
+---
+
+## ⚙️ 5. Spring Boot y Backend
+
+Introducción al desarrollo backend utilizando Spring Boot.
+
+### Temas:
+- Arquitectura cliente-servidor
+- Controladores
+- Rutas
+- Thymeleaf
+- MVC
+- Inyección de dependencias
+- JSON
+- Manejo de peticiones HTTP
+
+---
+
+# 🧩 Funcionalidades del Sitio
+
+## 📚 Sistema de Temas
+- Navegación lateral interactiva
+- Carga dinámica de contenido desde archivos JSON
+- Visualización organizada de conceptos y ejemplos
+
+---
+
+## 📝 Cuestionarios Interactivos
+Cada tema incluye:
+- 5 preguntas básicas
+- Opciones múltiples
+- Calificación automática
+- Retroalimentación visual
+
+Los cuestionarios son cargados dinámicamente desde archivos JSON.
+
+---
+
+## 🎮 Juego Interactivo
+El proyecto incluye un minijuego educativo desarrollado con JavaScript.
+
+### Características:
+- Movimiento con teclado
+- Sistema de vidas
+- Obstáculos y enemigos
+- Recolección de puntos
+- Condición de victoria y derrota
+- Tablero dinámico
+
+---
+
+## 🎨 Diseño Responsive
+El sitio fue diseñado utilizando Bootstrap 5 para adaptarse correctamente a:
+- Computadoras
+- Tablets
+- Dispositivos móviles
+
+---
+
+# ▶️ Cómo Ejecutar el Proyecto
+
+## Requisitos
+- Java 17+
+- Maven
+- IntelliJ IDEA (recomendado)
+
+---
+
+## Pasos
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/usuario/repositorio.git
 ```
 
 ---
 
-## 📖 Contenido del Sitio
+### 2. Abrir el proyecto
 
-### 🌐 1. Fundamentos de Internet y la Web
-
-Se explican los conceptos básicos del funcionamiento de Internet y la Web, incluyendo:
-
-* Internet vs Web
-* Modelo OSI y sus capas
-* Dirección IP y DNS
-* HTTP y HTTPS
-* Métodos HTTP
-* Códigos de estado
-* Funcionamiento de una petición web
+Abrir la carpeta del proyecto en IntelliJ IDEA.
 
 ---
 
-### 🧱 2. HTML
+### 3. Ejecutar Spring Boot
 
-Se abordan los fundamentos del lenguaje HTML:
+Ejecutar la clase:
 
-* Estructura básica de un documento
-* Etiquetas principales (`html`, `head`, `body`, etc.)
-* Encabezados, párrafos, enlaces e imágenes
-* Listas y tablas
-* Formularios e inputs
-* Etiquetas semánticas
+```text
+SitioEducativoDesarrolloWebApplication.java
+```
 
 ---
 
-### 🎨 3. CSS
+### 4. Abrir en el navegador
 
-Se explica el uso de CSS para el diseño de páginas web:
-
-* Formas de aplicar CSS
-* Selectores
-* Propiedades básicas
-* Modelo de caja (Box Model)
-* Display y Position
-* Introducción a Flexbox
-* Buenas prácticas
+```text
+http://localhost:8080
+```
 
 ---
 
-### ⚙️ 4. Elementos del Backend
+# 📊 Características Técnicas
 
-Introducción a conceptos básicos del desarrollo backend:
-
-* Cliente vs Servidor
-* HTTP Request y Response
-* Métodos GET y POST
-* Uso de Spring Boot
-* Controladores (`@Controller`, `@RestController`)
-* Inyección de dependencias (`@Autowired`)
-* Uso de Thymeleaf
-* Cookies y sesiones
+- Arquitectura MVC
+- Carga dinámica de contenido JSON
+- Componentes reutilizables con Thymeleaf
+- Estilos personalizados con Bootstrap
+- Organización modular de archivos
+- Diseño responsive
+- Interactividad con JavaScript
 
 ---
 
-## 🧭 Características del Sitio
+# 📌 Posibles Mejoras Futuras
 
-* Diseño responsive adaptable a diferentes dispositivos
-* Menú de navegación entre temas
-* Organización clara por secciones
-* Inclusión de ejemplos prácticos y fragmentos de código
-* Aplicación de buenas prácticas de desarrollo
-
----
-
-## ▶️ Cómo Ejecutar el Proyecto
-
-1. Descargar o clonar el repositorio
-2. Abrir el archivo `index.html` en cualquier navegador web
-3. Navegar entre los diferentes temas desde el menú principal
+- Sistema de usuarios
+- Base de datos
+- Login y autenticación
+- Guardado de puntuaciones
+- Más minijuegos educativos
+- Panel administrativo
+- Estadísticas de aprendizaje
 
 ---
 
-## 📦 Entregable
+# 👨‍💻 Autor
 
-El proyecto incluye:
+**Nicolas Zárate Hernández**  
+Ingeniería en Sistemas de Información  
+Universidad Nacional de Costa Rica
 
-* Archivos HTML, CSS e imágenes
-* Estructura organizada del sitio
-* Página principal funcional (`index.html`)
+Curso:
+**Programación IV – EIF209**
 
----
-
-## 📊 Criterios de Evaluación
-
-* Organización del contenido
-* Claridad de las explicaciones
-* Uso correcto de HTML y CSS
-* Implementación del framework responsive
-* Diseño visual
-* Navegación del sitio
-* Calidad del código
+Docente:
+**Steven Brenes Chavarría**
 
 ---
 
-## 👨‍💻 Autor
+# 📄 Licencia
 
-Proyecto desarrollado como parte del curso de **Programación IV**.
+Proyecto desarrollado con fines educativos y académicos.
 
 ---
 
-## 📌 Notas
+# 🚀 Estado del Proyecto
 
-Este sitio web se encuentra en constante actualización conforme se agregan nuevos contenidos del curso.
+✅ En desarrollo activo  
+✅ Actualización progresiva conforme avanza el curso
